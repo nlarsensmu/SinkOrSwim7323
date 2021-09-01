@@ -1,13 +1,13 @@
 //
-//  SinkOrSwim7323UITests.swift
-//  SinkOrSwim7323UITests
+//  _7LandsViewerUITests.swift
+//  17LandsViewerUITests
 //
 //  Created by Nicholas Larsen on 8/31/21.
 //
 
 import XCTest
 
-class SinkOrSwim7323UITests: XCTestCase {
+class _7LandsViewerUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
