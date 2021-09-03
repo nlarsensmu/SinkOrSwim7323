@@ -15,6 +15,8 @@
 		FD60DDF126DEFF9A00C5AF2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD60DDEF26DEFF9A00C5AF2C /* LaunchScreen.storyboard */; };
 		FD60DDFC26DEFF9B00C5AF2C /* _7LandsViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD60DDFB26DEFF9B00C5AF2C /* _7LandsViewerTests.swift */; };
 		FD60DE0726DEFF9B00C5AF2C /* _7LandsViewerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD60DE0626DEFF9B00C5AF2C /* _7LandsViewerUITests.swift */; };
+		FD9C646726E2969D002F31DC /* FirstScreenTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C646626E2969D002F31DC /* FirstScreenTableViewController.swift */; };
+		FD9C646E26E29BEB002F31DC /* MagicDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9C646D26E29BEB002F31DC /* MagicDataModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,10 @@
 		FD60DE0226DEFF9B00C5AF2C /* 17LandsViewerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 17LandsViewerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD60DE0626DEFF9B00C5AF2C /* _7LandsViewerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _7LandsViewerUITests.swift; sourceTree = "<group>"; };
 		FD60DE0826DEFF9B00C5AF2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD9C646626E2969D002F31DC /* FirstScreenTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenTableViewController.swift; sourceTree = "<group>"; };
+		FD9C646826E29AB2002F31DC /* 17LandsViewer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "17LandsViewer-Bridging-Header.h"; sourceTree = "<group>"; };
+		FD9C646C26E29BEB002F31DC /* MagicDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MagicDataModel.h; sourceTree = "<group>"; };
+		FD9C646D26E29BEB002F31DC /* MagicDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MagicDataModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,10 +108,14 @@
 				FD60DDE426DEFF9900C5AF2C /* AppDelegate.swift */,
 				FD60DDE626DEFF9900C5AF2C /* SceneDelegate.swift */,
 				FD60DDE826DEFF9900C5AF2C /* ViewController.swift */,
+				FD9C646626E2969D002F31DC /* FirstScreenTableViewController.swift */,
 				FD60DDEA26DEFF9900C5AF2C /* Main.storyboard */,
 				FD60DDED26DEFF9A00C5AF2C /* Assets.xcassets */,
 				FD60DDEF26DEFF9A00C5AF2C /* LaunchScreen.storyboard */,
 				FD60DDF226DEFF9A00C5AF2C /* Info.plist */,
+				FD9C646826E29AB2002F31DC /* 17LandsViewer-Bridging-Header.h */,
+				FD9C646C26E29BEB002F31DC /* MagicDataModel.h */,
+				FD9C646D26E29BEB002F31DC /* MagicDataModel.m */,
 			);
 			path = 17LandsViewer;
 			sourceTree = "<group>";
@@ -195,6 +205,7 @@
 				TargetAttributes = {
 					FD60DDE026DEFF9900C5AF2C = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
 					};
 					FD60DDF626DEFF9A00C5AF2C = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -258,8 +269,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD9C646E26E29BEB002F31DC /* MagicDataModel.m in Sources */,
 				FD60DDE926DEFF9900C5AF2C /* ViewController.swift in Sources */,
 				FD60DDE526DEFF9900C5AF2C /* AppDelegate.swift in Sources */,
+				FD9C646726E2969D002F31DC /* FirstScreenTableViewController.swift in Sources */,
 				FD60DDE726DEFF9900C5AF2C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,6 +449,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = 17LandsViewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -444,6 +458,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "SMU.-7LandsViewer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "17LandsViewer/17LandsViewer-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -454,6 +470,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = 17LandsViewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -462,6 +479,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "SMU.-7LandsViewer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "17LandsViewer/17LandsViewer-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
