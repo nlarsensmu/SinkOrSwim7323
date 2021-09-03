@@ -18,6 +18,9 @@
 		FD9C646726E2969D002F31DC /* FirstScreenTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C646626E2969D002F31DC /* FirstScreenTableViewController.swift */; };
 		FD9C646E26E29BEB002F31DC /* RootViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9C646D26E29BEB002F31DC /* RootViewModel.m */; };
 		FD9C647226E2C72A002F31DC /* MagicMetadataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C647126E2C72A002F31DC /* MagicMetadataModel.swift */; };
+		FD9C647426E2D663002F31DC /* PlayerLeaderBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C647326E2D663002F31DC /* PlayerLeaderBoard.swift */; };
+		FD9C647626E2D6DB002F31DC /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C647526E2D6DB002F31DC /* Card.swift */; };
+		FD9C647826E2DB8A002F31DC /* LeaderBoardViewContorller.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C647726E2DB8A002F31DC /* LeaderBoardViewContorller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		FD9C646C26E29BEB002F31DC /* RootViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewModel.h; sourceTree = "<group>"; };
 		FD9C646D26E29BEB002F31DC /* RootViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewModel.m; sourceTree = "<group>"; };
 		FD9C647126E2C72A002F31DC /* MagicMetadataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicMetadataModel.swift; sourceTree = "<group>"; };
+		FD9C647326E2D663002F31DC /* PlayerLeaderBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerLeaderBoard.swift; sourceTree = "<group>"; };
+		FD9C647526E2D6DB002F31DC /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		FD9C647726E2DB8A002F31DC /* LeaderBoardViewContorller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderBoardViewContorller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,11 +119,14 @@
 				FD9C646626E2969D002F31DC /* FirstScreenTableViewController.swift */,
 				FD9C647126E2C72A002F31DC /* MagicMetadataModel.swift */,
 				FD60DDEA26DEFF9900C5AF2C /* Main.storyboard */,
+				FD9C647726E2DB8A002F31DC /* LeaderBoardViewContorller.swift */,
 				FD60DDED26DEFF9A00C5AF2C /* Assets.xcassets */,
 				FD60DDEF26DEFF9A00C5AF2C /* LaunchScreen.storyboard */,
 				FD60DDF226DEFF9A00C5AF2C /* Info.plist */,
 				FD9C646C26E29BEB002F31DC /* RootViewModel.h */,
 				FD9C646D26E29BEB002F31DC /* RootViewModel.m */,
+				FD9C647326E2D663002F31DC /* PlayerLeaderBoard.swift */,
+				FD9C647526E2D6DB002F31DC /* Card.swift */,
 				FD9C646826E29AB2002F31DC /* 17LandsViewer-Bridging-Header.h */,
 			);
 			path = 17LandsViewer;
@@ -277,7 +286,10 @@
 				FD9C647226E2C72A002F31DC /* MagicMetadataModel.swift in Sources */,
 				FD60DDE526DEFF9900C5AF2C /* AppDelegate.swift in Sources */,
 				FD9C646726E2969D002F31DC /* FirstScreenTableViewController.swift in Sources */,
+				FD9C647826E2DB8A002F31DC /* LeaderBoardViewContorller.swift in Sources */,
 				FD60DDE726DEFF9900C5AF2C /* SceneDelegate.swift in Sources */,
+				FD9C647426E2D663002F31DC /* PlayerLeaderBoard.swift in Sources */,
+				FD9C647626E2D6DB002F31DC /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
