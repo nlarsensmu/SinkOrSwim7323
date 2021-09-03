@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B0A9399A26E2A7A30039E1FF /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A9399926E2A7A30039E1FF /* Card.swift */; };
+		B0A9399C26E2A8460039E1FF /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A9399B26E2A8460039E1FF /* Player.swift */; };
 		FD60DDE526DEFF9900C5AF2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD60DDE426DEFF9900C5AF2C /* AppDelegate.swift */; };
 		FD60DDE726DEFF9900C5AF2C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD60DDE626DEFF9900C5AF2C /* SceneDelegate.swift */; };
 		FD60DDE926DEFF9900C5AF2C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD60DDE826DEFF9900C5AF2C /* ViewController.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B0A9399926E2A7A30039E1FF /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		B0A9399B26E2A8460039E1FF /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		FD60DDE126DEFF9900C5AF2C /* 17LandsViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 17LandsViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD60DDE426DEFF9900C5AF2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD60DDE626DEFF9900C5AF2C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +110,8 @@
 				FD60DDED26DEFF9A00C5AF2C /* Assets.xcassets */,
 				FD60DDEF26DEFF9A00C5AF2C /* LaunchScreen.storyboard */,
 				FD60DDF226DEFF9A00C5AF2C /* Info.plist */,
+				B0A9399926E2A7A30039E1FF /* Card.swift */,
+				B0A9399B26E2A8460039E1FF /* Player.swift */,
 			);
 			path = 17LandsViewer;
 			sourceTree = "<group>";
@@ -261,6 +267,8 @@
 				FD60DDE926DEFF9900C5AF2C /* ViewController.swift in Sources */,
 				FD60DDE526DEFF9900C5AF2C /* AppDelegate.swift in Sources */,
 				FD60DDE726DEFF9900C5AF2C /* SceneDelegate.swift in Sources */,
+				B0A9399C26E2A8460039E1FF /* Player.swift in Sources */,
+				B0A9399A26E2A7A30039E1FF /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
