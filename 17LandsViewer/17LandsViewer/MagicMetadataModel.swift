@@ -69,6 +69,42 @@ class MagicMetadataModel: NSObject {
         }
         return players
     }
+    func getCardStatsForSet(expansion: String, format: String) -> [Card] {
+            let url : String = "https://www.17lands.com/card_ratings/data?expansion=\(expansion)&format=\(format)&start_date=2021-04-30&end_date=2021-08-31"
+            var request = URLRequest(url: URL(string: url)!)
+            request.httpMethod = "GET"
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            let session = URLSession.shared
+            
+            var dataRecieved: Data?
+            let sem = DispatchSemaphore.init(value: 0)
+            
+            var cardsData: NSArray = []
+        var cards: [Card] = []
+            let task = session.dataTask(with: request) { data, response, error in
+                defer { sem.signal() }
+                
+                if let error = error {
+                    print("error getting cards \(error)")
+                    return
+                }
+                dataRecieved = data
+            }
+            task.resume()
+            sem.wait()
+            do{
+                cardsData = try JSONSerialization.jsonObject(with: dataRecieved!) as! NSArray
+                for card in cardsData{
+                    if let c = card as? NSDictionary{
+                        cards.append(Card(card:c))
+                    }
+                }
+            }
+            catch{
+                print("error getting colors \(error)")
+            }
+            return cards
+    }
     func getSets() -> [String]{
         return self.sets
     }
@@ -79,4 +115,12 @@ class MagicMetadataModel: NSObject {
         return self.formats
     }
 
+    
+    //private helper function
+    private func filterCards(cards:[Card]) -> [Card]{
+        var returnCards: [Card] = []
+        
+        
+        return returnCards
+    }
 }
