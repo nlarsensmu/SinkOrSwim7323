@@ -19,8 +19,6 @@ class LeaderBoardViewContorller: UIViewController, UITextFieldDelegate, UIPicker
 
         setPicker.delegate = self
         setPicker.dataSource = self
-	        DispatchQueue.main.async {
-        }
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 3

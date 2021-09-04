@@ -89,30 +89,55 @@
             </objects>
             <point key="canvasLocation" x="-1580" y="105"/>
         </scene>
-        <!--View Controller-->
+        <!--Card Search View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="_7LandsViewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CardSearchViewController" customModule="_7LandsViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Card Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBh-MB-N8w">
-                                <rect key="frame" x="179" y="412" width="94" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Stats Lookup" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gp-Pi-2Te">
+                                <rect key="frame" x="136.5" y="88" width="141" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zvf-hg-uht">
+                                <rect key="frame" x="0.0" y="142" width="414" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SvH-2I-kv3">
+                                <rect key="frame" x="340" y="590" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nut-k1-dEJ">
+                                <rect key="frame" x="0.0" y="184" width="414" height="162"/>
+                            </pickerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0gp-Pi-2Te" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Bki-Fm-2t0"/>
+                            <constraint firstItem="zvf-hg-uht" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="H7y-fL-H4o"/>
+                            <constraint firstItem="zvf-hg-uht" firstAttribute="top" secondItem="0gp-Pi-2Te" secondAttribute="bottom" constant="33" id="IUL-Sw-OEs"/>
+                            <constraint firstItem="nut-k1-dEJ" firstAttribute="top" secondItem="zvf-hg-uht" secondAttribute="bottom" constant="8" symbolic="YES" id="Lcv-Vk-V3T"/>
+                            <constraint firstItem="nut-k1-dEJ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="cgR-8g-O3M"/>
+                            <constraint firstItem="0gp-Pi-2Te" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fce-aP-Z6y"/>
+                            <constraint firstItem="zvf-hg-uht" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="fvG-s8-OqF"/>
+                            <constraint firstItem="nut-k1-dEJ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="qGN-pt-8Kx"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="D5q-bv-CFa"/>
+                    <connections>
+                        <outlet property="setColorRarityPicker" destination="nut-k1-dEJ" id="0hg-pm-B2B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="474" y="-774"/>
+            <point key="canvasLocation" x="473.91304347826093" y="-774.10714285714278"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="IUl-Rn-ljh">
