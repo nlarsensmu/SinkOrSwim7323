@@ -22,3 +22,7 @@ A best of 3 format where players play a total of 3 games regaurdless of losses. 
 
 ### Sealed (Traditional)
 In sealed ONE player opens 6 packs of 15 cards and constructs a deck 40 card deck (normally 16 or 17 lands that were not from the packs). This is played similar to draft with normal (like priemer) and Traditional that is best of 3	
+
+
+## Disclaimer
+We want to warn any USERS (graders) that we did not pick any of the user names that are being displayed on the leaderboard, if any of them are inappropriate we appologize. Wizards of the Coast does moderate usernames in their system but we appologize if any slip through the cracks that are inappropriate.
