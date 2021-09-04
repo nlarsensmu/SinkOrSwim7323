@@ -1,28 +1,40 @@
 //
-//  LeaderBoardTableViewController.swift
+//  CardResultsTableViewController.swift
 //  17LandsViewer
 //
-//  Created by Nicholas Larsen on 9/3/21.
+//  Created by Nicholas Larsen on 9/4/21.
 //
 
 import UIKit
 
-class LeaderBoardTableViewController: UITableViewController {
+class CardResultsTableViewController: UITableViewController {
+
+    
+    var name:String?
+    var set:String?
+    var color:String?
+    var rarity:String?
+    
+    var results:[Card] = []
     
     weak private var metaDataModel:MagicMetadataModel? = MagicMetadataModel.sharedInstance
-
-    var set:String?
-    var format:String?
-    var ranking:String?
-    var topPlayers:[Player] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let s = self.set, let f = self.format, let r = self.ranking {
+
+        let n:String = {
+            if let n = self.name {
+                return n
+            }
+            return ""
+        }()
+        
+        if let s = self.set, let c = self.color, let r = self.rarity {
+            print("\(n) \(s) \(c) \(r)")
             
-            if let players = metaDataModel?.getLeaderBoards(expansion: s, format: f, ranking: r) {
-                print("there are \(players.count) players in the \(r) leaderboard")
-                self.topPlayers = players
+            if let results = metaDataModel?.getCardStatsForSet(expansion: s, format: "sealed") {
+                self.results = results
+                print("Found \(self.results.count) results")
             }
             
         }
@@ -32,7 +44,7 @@ class LeaderBoardTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
+     }
 
     // MARK: - Table view data source
 
@@ -43,31 +55,15 @@ class LeaderBoardTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return self.topPlayers.count
+        return self.results.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "playerCell", for: indexPath)
-        let index = indexPath.row
-        // Configure the cell...
-        cell.textLabel?.text = "\(index + 1). \(self.topPlayers[indexPath.row].screenName)"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cardResultCell", for: indexPath)
         
-        if let r = self.ranking {
-            switch r {
-            case "rank":
-                cell.detailTextLabel?.text = self.topPlayers[indexPath.row].rank
-            case "matchWins":
-                cell.detailTextLabel?.text = String(format: "%f", self.topPlayers[indexPath.row].winRate)
-            case "trophies":
-                cell.detailTextLabel?.text = String(format: "%d", self.topPlayers[indexPath.row].trophies)
-            case "wins":
-                cell.detailTextLabel?.text = String(format: "%d", self.topPlayers[indexPath.row].wins)
-            default:
-                cell.detailTextLabel?.text = "No data"
-            }
-            
-        }
+        cell.textLabel?.text = self.results[indexPath.row].name
+
+        // Configure the cell...
 
         return cell
     }
@@ -108,20 +104,14 @@ class LeaderBoardTableViewController: UITableViewController {
     }
     */
 
-    
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var test = sender
-        if let cell = sender as? UITableViewCell{
-            if let indexPath = self.tableView.indexPath(for: cell) as? IndexPath,
-               let index = indexPath.row as? Int,
-               let playerController = segue as? PlayerViewController{
-                print(index)
-            }
-        }
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
     }
-    
+    */
 
 }
