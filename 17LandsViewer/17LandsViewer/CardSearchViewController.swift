@@ -30,7 +30,7 @@ class CardSearchViewController: UIViewController, UIPickerViewDelegate,  UIPicke
     
     // MARK: - UIPickerViewDelegate Functions:
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 3
+        return 4
     }
     
     func pickerView(_ pickerView:UIPickerView, numberOfRowsInComponent:Int)-> Int{
@@ -39,9 +39,10 @@ class CardSearchViewController: UIViewController, UIPickerViewDelegate,  UIPicke
             return cardSearchModel.getSets().count + 1
         case 1:
             return cardSearchModel.getColors().count + 1
-
         case 2:
-            return cardSearchModel.getRarities().count + 1 
+            return cardSearchModel.getRarities().count + 1
+        case 3:
+            return cardSearchModel.getFormats().count + 1
         default:
             return 0
         }
@@ -65,6 +66,11 @@ class CardSearchViewController: UIViewController, UIPickerViewDelegate,  UIPicke
                 return "Rarity"
             }
             return self.cardSearchModel.getRarities()[row-1]
+        case 3:
+            if row == 0 {
+                return "Format"
+            }
+            return self.cardSearchModel.getFormats()[row-1]
         default:
             return ""
         }
@@ -98,11 +104,14 @@ class CardSearchViewController: UIViewController, UIPickerViewDelegate,  UIPicke
             let rowSet = setColorRarityPicker.selectedRow(inComponent: 0)
             let rowColor = setColorRarityPicker.selectedRow(inComponent: 1)
             let rowRarity = setColorRarityPicker.selectedRow(inComponent: 2)
+            let rowFormat = setColorRarityPicker.selectedRow(inComponent: 3)
             
             if rowSet != 0 && rowColor != 0 && rowRarity != 0 {
+                vc.name = cardNameField.text
                 vc.set = cardSearchModel.getSets()[rowSet - 1]
                 vc.color = cardSearchModel.getColors()[rowColor - 1]
                 vc.rarity = cardSearchModel.getRarities()[rowRarity - 1]
+                vc.format = cardSearchModel.getFormats()[rowFormat - 1]
             }
         }
     }
@@ -111,7 +120,8 @@ class CardSearchViewController: UIViewController, UIPickerViewDelegate,  UIPicke
         let rowSet = setColorRarityPicker.selectedRow(inComponent: 0)
         let rowColor = setColorRarityPicker.selectedRow(inComponent: 1)
         let rowRarity = setColorRarityPicker.selectedRow(inComponent: 2)
-        if rowSet != 0 && rowColor != 0 && rowRarity != 0 {
+        let rowFormat = setColorRarityPicker.selectedRow(inComponent: 3)
+        if rowSet != 0 && rowColor != 0 && rowRarity != 0 && rowFormat != 0{
            return true
         }
         else{

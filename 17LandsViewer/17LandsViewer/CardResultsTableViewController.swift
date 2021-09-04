@@ -14,6 +14,7 @@ class CardResultsTableViewController: UITableViewController {
     var set:String?
     var color:String?
     var rarity:String?
+    var format:String?
     
     var results:[Card] = []
     
@@ -29,12 +30,12 @@ class CardResultsTableViewController: UITableViewController {
             return ""
         }()
         
-        if let s = self.set, let c = self.color, let r = self.rarity {
+        if let s = self.set, let c = self.color, let r = self.rarity, let f = self.format {
             print("\(n) \(s) \(c) \(r)")
             
-            if let results = metaDataModel?.getCardStatsForSet(expansion: s, format: "sealed") {
+            if let results = metaDataModel?.getCardStatsForSet(expansion: s, format: f, colorsFilter: [c], rarity: r,
+                                                               name: n) {
                 self.results = results
-                print("Found \(self.results.count) results")
             }
             
         }
