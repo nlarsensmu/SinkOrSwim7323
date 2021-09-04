@@ -22,6 +22,9 @@
 		FD9C647626E2D6DB002F31DC /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C647526E2D6DB002F31DC /* Card.swift */; };
 		FD9C647826E2DB8A002F31DC /* LeaderBoardViewContorller.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C647726E2DB8A002F31DC /* LeaderBoardViewContorller.swift */; };
 		FD9C647A26E2F59F002F31DC /* LeaderBoardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C647926E2F59F002F31DC /* LeaderBoardTableViewController.swift */; };
+		FD9C647C26E32B9E002F31DC /* CardSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C647B26E32B9E002F31DC /* CardSearchViewController.swift */; };
+		FD9C647E26E32C72002F31DC /* CardSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C647D26E32C72002F31DC /* CardSearchModel.swift */; };
+		FD9C648026E3E728002F31DC /* CardResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C647F26E3E728002F31DC /* CardResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,9 @@
 		FD9C647526E2D6DB002F31DC /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		FD9C647726E2DB8A002F31DC /* LeaderBoardViewContorller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderBoardViewContorller.swift; sourceTree = "<group>"; };
 		FD9C647926E2F59F002F31DC /* LeaderBoardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderBoardTableViewController.swift; sourceTree = "<group>"; };
+		FD9C647B26E32B9E002F31DC /* CardSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSearchViewController.swift; sourceTree = "<group>"; };
+		FD9C647D26E32C72002F31DC /* CardSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSearchModel.swift; sourceTree = "<group>"; };
+		FD9C647F26E3E728002F31DC /* CardResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,8 +127,11 @@
 				FD9C646626E2969D002F31DC /* FirstScreenTableViewController.swift */,
 				FD9C647126E2C72A002F31DC /* MagicMetadataModel.swift */,
 				FD60DDEA26DEFF9900C5AF2C /* Main.storyboard */,
+				FD9C647F26E3E728002F31DC /* CardResultsTableViewController.swift */,
 				FD9C647726E2DB8A002F31DC /* LeaderBoardViewContorller.swift */,
 				FD9C647926E2F59F002F31DC /* LeaderBoardTableViewController.swift */,
+				FD9C647B26E32B9E002F31DC /* CardSearchViewController.swift */,
+				FD9C647D26E32C72002F31DC /* CardSearchModel.swift */,
 				FD60DDED26DEFF9A00C5AF2C /* Assets.xcassets */,
 				FD60DDEF26DEFF9A00C5AF2C /* LaunchScreen.storyboard */,
 				FD60DDF226DEFF9A00C5AF2C /* Info.plist */,
@@ -285,6 +294,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD9C646E26E29BEB002F31DC /* RootViewModel.m in Sources */,
+				FD9C647E26E32C72002F31DC /* CardSearchModel.swift in Sources */,
+				FD9C648026E3E728002F31DC /* CardResultsTableViewController.swift in Sources */,
+				FD9C647C26E32B9E002F31DC /* CardSearchViewController.swift in Sources */,
 				FD60DDE926DEFF9900C5AF2C /* ViewController.swift in Sources */,
 				FD9C647226E2C72A002F31DC /* MagicMetadataModel.swift in Sources */,
 				FD60DDE526DEFF9900C5AF2C /* AppDelegate.swift in Sources */,
