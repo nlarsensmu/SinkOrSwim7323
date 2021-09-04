@@ -15,10 +15,8 @@ class LeaderBoardViewContorller: UIViewController, UITextFieldDelegate, UIPicker
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-        setPicker.delegate = self
-        setPicker.dataSource = self
+        picker.delegate = self
+        picker.dataSource = self
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 3
@@ -63,7 +61,7 @@ class LeaderBoardViewContorller: UIViewController, UITextFieldDelegate, UIPicker
             return self.metaDataModel?.getFormats()[row-1]
         }
     }
-    @IBOutlet weak var setPicker: UIPickerView!
+    @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var searchButton: UIButton!
 
     var leaderBoard:PlayerLeaderBoard?
@@ -79,16 +77,27 @@ class LeaderBoardViewContorller: UIViewController, UITextFieldDelegate, UIPicker
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if let vc = segue.destination as? LeaderBoardTableViewController{
-           //let format = self.formatTextField.text,
-           //let set = self.setTextField.text,
-           //let ranking = self.leaderBoardText.text {
-           // vc.format = format
-           // vc.set = set
-           // vc.ranking = ranking
-        vc.format = "Sealed"
-        vc.set = "AFR"
-        vc.ranking = "rank"
+            let rowSet = picker.selectedRow(inComponent: 0)
+            let rowRank = picker.selectedRow(inComponent: 1)
+            let rowFormat = picker.selectedRow(inComponent: 2)
+            if rowSet != 0 && rowRank != 0 && rowFormat != 0 {
+                vc.set = metaDataModel?.getSets()[rowSet - 1]
+                vc.ranking = metaDataModel?.getRanking()[rowRank - 1]
+                vc.format = metaDataModel?.getFormats()[rowFormat - 1]
+            }
         }
+    }
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        let rowSet = picker.selectedRow(inComponent: 0)
+        let rowRank = picker.selectedRow(inComponent: 1)
+        let rowFormat = picker.selectedRow(inComponent: 2)
+        if rowSet != 0 && rowRank != 0 && rowFormat != 0 {
+           return true
+        }
+        else{
+            return false
+        }
+        
     }
     
 

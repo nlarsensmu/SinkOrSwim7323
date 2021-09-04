@@ -18,9 +18,9 @@ class MagicMetadataModel: NSObject {
         
         return sharedInstance
     }()
-    private var sets =  ["STX","AFR"];
-    private var formats = ["Sealed","PrimierDraft"]
-    private var rankings = ["Rank","Wins"]
+    private var sets =  ["STX","AFR","KHM","ZNR","KLR","M21","AKR","IKO","THB","ELD","M20","WAR","RNA","GRN","M19","DOM","RIX","XLN","MH2","MH1","2XM","TSR","Ravnica","CORE","Cube"];
+    private var formats = ["Sealed","PremierDraft","QuickDraft","CompDraft"]
+    private var rankings = ["wins","actual rank","win rate","trophies", "trophy rate"]
     
     func getLeaderBoards(expansion: String, format: String, ranking: String) -> [Player]? {
         let url : String = "https://www.17lands.com/data/leaderboard?expansion=\(expansion)&format=\(format)"
@@ -54,15 +54,19 @@ class MagicMetadataModel: NSObject {
         let leaderBoard = PlayerLeaderBoard(leaderBoard: leaderBoardData!)
         
         switch ranking {
-        case "rank":
+        case "actual rank":
             players = leaderBoard.rank
-            for player in players {
-                print("\(player.screenName) \(player.rank)")
-            }
+        case "wins":
+            players = leaderBoard.wins
+        case "win rate":
+            players = leaderBoard.winRate
+        case "trophies":
+            players = leaderBoard.trophies
+        case "trophy reate":
+            players = leaderBoard.trophyRate
         default:
             players = []
         }
-        
         return players
     }
     func getSets() -> [String]{
