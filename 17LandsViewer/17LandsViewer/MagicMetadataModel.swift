@@ -69,7 +69,7 @@ class MagicMetadataModel: NSObject {
         }
         return players
     }
-    func getCardStatsForSet(expansion: String, format: String) -> [Card] {
+    func getCardStatsForSet(expansion: String, format: String, colorsFilter:[String] = [], rarity:String? = nil) -> [Card] {
             let url : String = "https://www.17lands.com/card_ratings/data?expansion=\(expansion)&format=\(format)&start_date=2021-04-30&end_date=2021-08-31"
             var request = URLRequest(url: URL(string: url)!)
             request.httpMethod = "GET"
@@ -99,6 +99,12 @@ class MagicMetadataModel: NSObject {
                         cards.append(Card(card:c))
                     }
                 }
+                if colorsFilter.count != 0{
+                    cards = filterCardsForColor(cards: cards, colorsFilters: colorsFilter)
+                }
+                if let r = rarity{
+                    cards = fitlerCardsForRaity(cards: cards, rarity: r)
+                }
             }
             catch{
                 print("error getting colors \(error)")
@@ -117,10 +123,50 @@ class MagicMetadataModel: NSObject {
 
     
     //private helper function
-    private func filterCards(cards:[Card]) -> [Card]{
+    private func filterCardsForColor(cards:[Card], colorsFilters:[String]) -> [Card]{
         var returnCards: [Card] = []
-        
-        
+        let colorsFilter = translateColors(colorsUntranslated: colorsFilters)
+        for card in cards {
+            if colorsFilter.count != 0{
+                for c in colorsFilter {
+                    if card.color.contains(c){
+                        returnCards.append(card)
+                    }
+                }
+            }
+        }
         return returnCards
+    }
+    private func fitlerCardsForRaity(cards:[Card], rarity:String) -> [Card]{
+        var returnCards: [Card] = []
+        for card in cards {
+            if card.rarity == rarity{
+                returnCards.append(card)
+            }
+        }
+        return returnCards
+        
+    }
+    private func translateColors(colorsUntranslated:[String]) -> [String]{
+        var returnColors: [String] = []
+        for color in colorsUntranslated {
+            switch color {
+            case "White":
+                returnColors.append("W")
+            case "Blue":
+                returnColors.append("U")
+            case "Black":
+                returnColors.append("B")
+            case "Green":
+                returnColors.append("G")
+            case "Red":
+                returnColors.append("R")
+            case "Colorless":
+                returnColors.append("")
+            default:
+                returnColors.append("")
+            }
+        }
+        return returnColors
     }
 }
