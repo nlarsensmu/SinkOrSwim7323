@@ -21,6 +21,7 @@
 		FD9C647426E2D663002F31DC /* PlayerLeaderBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C647326E2D663002F31DC /* PlayerLeaderBoard.swift */; };
 		FD9C647626E2D6DB002F31DC /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C647526E2D6DB002F31DC /* Card.swift */; };
 		FD9C647826E2DB8A002F31DC /* LeaderBoardViewContorller.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C647726E2DB8A002F31DC /* LeaderBoardViewContorller.swift */; };
+		FD9C647A26E2F59F002F31DC /* LeaderBoardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C647926E2F59F002F31DC /* LeaderBoardTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		FD9C647326E2D663002F31DC /* PlayerLeaderBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerLeaderBoard.swift; sourceTree = "<group>"; };
 		FD9C647526E2D6DB002F31DC /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		FD9C647726E2DB8A002F31DC /* LeaderBoardViewContorller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderBoardViewContorller.swift; sourceTree = "<group>"; };
+		FD9C647926E2F59F002F31DC /* LeaderBoardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderBoardTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				FD9C647126E2C72A002F31DC /* MagicMetadataModel.swift */,
 				FD60DDEA26DEFF9900C5AF2C /* Main.storyboard */,
 				FD9C647726E2DB8A002F31DC /* LeaderBoardViewContorller.swift */,
+				FD9C647926E2F59F002F31DC /* LeaderBoardTableViewController.swift */,
 				FD60DDED26DEFF9A00C5AF2C /* Assets.xcassets */,
 				FD60DDEF26DEFF9A00C5AF2C /* LaunchScreen.storyboard */,
 				FD60DDF226DEFF9A00C5AF2C /* Info.plist */,
@@ -290,6 +293,7 @@
 				FD60DDE726DEFF9900C5AF2C /* SceneDelegate.swift in Sources */,
 				FD9C647426E2D663002F31DC /* PlayerLeaderBoard.swift in Sources */,
 				FD9C647626E2D6DB002F31DC /* Card.swift in Sources */,
+				FD9C647A26E2F59F002F31DC /* LeaderBoardTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

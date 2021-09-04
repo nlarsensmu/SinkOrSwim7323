@@ -11,9 +11,9 @@ class Player {
     init(player: NSDictionary){
         if let screenName = player["screen_name"] as? String,
            let wins = player["wins"] as? Int64,
-           let winRate = player["winRate"] as? Double,
+           let winRate = player["win_rate"] as? Double,
            let trophies = player["trophies"] as? Int64,
-           let trophyRate = player["trophyRate"] as? Double,
+           let trophyRate = player["trophy_rate"] as? Double,
            let rank = player["rank"] as? String{
             self.screenName = screenName
             self.rank = rank
@@ -53,28 +53,28 @@ class PlayerLeaderBoard {
                 }
             }
         }
-        if let _ranks = leaderBoard["wins"] as?  NSArray{
+        if let _ranks = leaderBoard["rank"] as?  NSArray{
             for _rank in _ranks {
                 if let r = _rank as? NSDictionary{
                     self.rank.append(Player(player: r))
                 }
             }
         }
-        if let _trophies = leaderBoard["wins"] as?  NSArray{
+        if let _trophies = leaderBoard["trophies"] as?  NSArray{
             for _trophie in _trophies {
                 if let t = _trophie as? NSDictionary{
                     self.trophies.append(Player(player: t))
                 }
             }
         }
-        if let _trophyRates = leaderBoard["wins"] as?  NSArray{
+        if let _trophyRates = leaderBoard["trophy_rate"] as?  NSArray{
             for _trophyRate in _trophyRates {
                 if let t = _trophyRate as? NSDictionary{
                     self.trophyRate.append(Player(player: t))
                 }
             }
         }
-        if let _winRates = leaderBoard["wins"] as?  NSArray{
+        if let _winRates = leaderBoard["win_rate"] as?  NSArray{
             for _winRate in _winRates {
                 if let w = _winRate as? NSDictionary{
                     self.winRate.append(Player(player: w))
