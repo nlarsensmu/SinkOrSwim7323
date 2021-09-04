@@ -33,4 +33,11 @@ class CardSearchModel: NSObject {
         
         return sets
     }
+    
+    func getFormats() -> [String] {
+        if let formats = metaDataModel?.getFormats() {
+            return formats
+        }
+        return []
+    }
 }

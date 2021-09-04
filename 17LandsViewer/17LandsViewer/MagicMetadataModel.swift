@@ -69,7 +69,21 @@ class MagicMetadataModel: NSObject {
         }
         return players
     }
-    func getCardStatsForSet(expansion: String, format: String, colorsFilter:[String] = [], rarity:String? = nil) -> [Card] {
+    
+    func getSets() -> [String]{
+        return self.sets
+    }
+    func getRanking() -> [String]{
+        return self.rankings
+    }
+    func getFormats() -> [String]{
+        return self.formats
+    }
+    
+    // MARK: - Get Cards Methods
+    func getCardStatsForSet(expansion: String, format: String, colorsFilter:[String] = [], rarity:String? = nil,
+                            name:String? = nil, sortby:String = "name") -> [Card] {
+        
             let url : String = "https://www.17lands.com/card_ratings/data?expansion=\(expansion)&format=\(format)&start_date=2021-04-30&end_date=2021-08-31"
             var request = URLRequest(url: URL(string: url)!)
             request.httpMethod = "GET"
@@ -99,11 +113,14 @@ class MagicMetadataModel: NSObject {
                         cards.append(Card(card:c))
                     }
                 }
-                if colorsFilter.count != 0{
-                    cards = filterCardsForColor(cards: cards, colorsFilters: colorsFilter)
+                if colorsFilter.count != 0 {
+                    cards = filter(cards: cards, byColors: colorsFilter)
                 }
-                if let r = rarity{
-                    cards = fitlerCardsForRaity(cards: cards, rarity: r)
+                if let r = rarity {
+                    cards = filter(cards: cards, byRarity: r)
+                }
+                if let n = name {
+                    cards = filter(cards: cards, byName: n)
                 }
                 sortCardsBy(by: "", cards: &cards)
             }
@@ -112,42 +129,45 @@ class MagicMetadataModel: NSObject {
             }
             return cards
     }
-    func getSets() -> [String]{
-        return self.sets
-    }
-    func getRanking() -> [String]{
-        return self.rankings
-    }
-    func getFormats() -> [String]{
-        return self.formats
-    }
-
     
-    //private helper function
-    private func filterCardsForColor(cards:[Card], colorsFilters:[String]) -> [Card]{
-        var returnCards: [Card] = []
-        let colorsFilter = translateColors(colorsUntranslated: colorsFilters)
+    // MARK: - Filter Functions
+    private func filter(cards:[Card], byColors:[String]) -> [Card] {
+        var returnedCards: [Card] = []
+        
+        let colorFilters = translateColors(colorsUntranslated: byColors)
         for card in cards {
-            if colorsFilter.count != 0{
-                for c in colorsFilter {
-                    if card.color.contains(c){
-                        returnCards.append(card)
+            if colorFilters.count != 0 {
+                for c in colorFilters {
+                    if card.color.contains(c) {
+                        returnedCards.append(card)
                     }
                 }
             }
         }
-        return returnCards
+        return returnedCards
     }
-    private func fitlerCardsForRaity(cards:[Card], rarity:String) -> [Card]{
+    
+    private func filter(cards:[Card], byName:String) -> [Card] {
+        var returnedCards: [Card] = []
+        
+        for card in cards {
+            if card.name.contains(byName) {
+                returnedCards.append(card)
+            }
+        }
+        return returnedCards
+    }
+    
+    private func filter(cards:[Card], byRarity:String) -> [Card] {
         var returnCards: [Card] = []
         for card in cards {
-            if card.rarity == rarity{
+            if card.rarity == byRarity {
                 returnCards.append(card)
             }
         }
         return returnCards
-        
     }
+    
     private func translateColors(colorsUntranslated:[String]) -> [String]{
         var returnColors: [String] = []
         for color in colorsUntranslated {
@@ -171,6 +191,35 @@ class MagicMetadataModel: NSObject {
         return returnColors
     }
     private func sortCardsBy(by:String, cards: inout [Card]){
-        cards.sort(by: {$0.winRate < $1.winRate})
+    
+        switch by {
+        case "winRate":
+            cards.sort(by: {$0.winRate < $1.winRate})
+        case "name":
+            cards.sort(by: {$0.name < $1.name})
+        case "openingHandWinRate":
+            cards.sort(by: {$0.openingHandWinRate < $1.openingHandWinRate})
+        case "drawnWinRate":
+            cards.sort(by: {$0.drawnWinRate < $1.drawnWinRate})
+        case "everDrawnWinRate":
+            cards.sort(by: {$0.everDrawnWinRate < $1.everDrawnWinRate})
+        case "neverDrawnWinRate":
+            cards.sort(by: {$0.everDrawnWinRate < $1.everDrawnWinRate})
+        case "drawnImprovementWinRate":
+            cards.sort(by: {$0.drawnImprovementWinRate < $1.drawnImprovementWinRate})
+        default:
+            cards.sort(by: {$0.name < $1.name})
+        }
+        
+        if by == "winRate" {
+        }
+        if by == "name" {
+        }
+        if by == "openingHandWinRate" {
+            cards.sort(by: {$0.openingHandWinRate < $1.openingHandWinRate})
+        }
+        if by == "drawnWinRate" {
+            cards.sort(by: {$0.drawnWinRate < $1.drawnWinRate})
+        }
     }
 }
