@@ -117,8 +117,13 @@ class LeaderBoardTableViewController: UITableViewController {
         if let cell = sender as? UITableViewCell{
             if let indexPath = self.tableView.indexPath(for: cell) as? IndexPath,
                let index = indexPath.row as? Int,
-               let playerController = segue as? PlayerViewController{
-                print(index)
+               let playerController = segue.destination as? PlayerViewController,
+               let s = self.set,
+               let f = self.format,
+               let r = self.ranking,
+               let leaderboard = self.metaDataModel?.getLeaderBoards(expansion: s, format: f, ranking: r) {
+                playerController.player = leaderboard[index]
+                playerController.rank = index + 1
             }
         }
     }
