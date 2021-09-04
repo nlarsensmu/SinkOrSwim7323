@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B0A9399E26E402A70039E1FF /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A9399D26E402A70039E1FF /* PlayerViewController.swift */; };
 		FD60DDE526DEFF9900C5AF2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD60DDE426DEFF9900C5AF2C /* AppDelegate.swift */; };
 		FD60DDE726DEFF9900C5AF2C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD60DDE626DEFF9900C5AF2C /* SceneDelegate.swift */; };
 		FD60DDE926DEFF9900C5AF2C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD60DDE826DEFF9900C5AF2C /* ViewController.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B0A9399D26E402A70039E1FF /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		FD60DDE126DEFF9900C5AF2C /* 17LandsViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 17LandsViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD60DDE426DEFF9900C5AF2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD60DDE626DEFF9900C5AF2C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				FD9C647326E2D663002F31DC /* PlayerLeaderBoard.swift */,
 				FD9C647526E2D6DB002F31DC /* Card.swift */,
 				FD9C646826E29AB2002F31DC /* 17LandsViewer-Bridging-Header.h */,
+				B0A9399D26E402A70039E1FF /* PlayerViewController.swift */,
 			);
 			path = 17LandsViewer;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				FD60DDE726DEFF9900C5AF2C /* SceneDelegate.swift in Sources */,
 				FD9C647426E2D663002F31DC /* PlayerLeaderBoard.swift in Sources */,
 				FD9C647626E2D6DB002F31DC /* Card.swift in Sources */,
+				B0A9399E26E402A70039E1FF /* PlayerViewController.swift in Sources */,
 				FD9C647A26E2F59F002F31DC /* LeaderBoardTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

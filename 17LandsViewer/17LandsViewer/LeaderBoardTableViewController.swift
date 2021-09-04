@@ -111,14 +111,20 @@ class LeaderBoardTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        var test = sender
+        if let cell = sender as? UITableViewCell{
+            if let indexPath = self.tableView.indexPath(for: cell) as? IndexPath,
+               let index = indexPath.row as? Int,
+               let playerController = segue as? PlayerViewController{
+                print(index)
+            }
+        }
     }
-    */
+    
 
 }
