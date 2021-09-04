@@ -105,6 +105,7 @@ class MagicMetadataModel: NSObject {
                 if let r = rarity{
                     cards = fitlerCardsForRaity(cards: cards, rarity: r)
                 }
+                sortCardsBy(by: "", cards: &cards)
             }
             catch{
                 print("error getting colors \(error)")
@@ -168,5 +169,8 @@ class MagicMetadataModel: NSObject {
             }
         }
         return returnColors
+    }
+    private func sortCardsBy(by:String, cards: inout [Card]){
+        cards.sort(by: {$0.winRate < $1.winRate})
     }
 }
