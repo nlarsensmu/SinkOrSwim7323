@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CardSearchViewController: UIViewController, UIPickerViewDelegate,  UIPickerViewDataSource{
+class CardSearchViewController: UIViewController, UIPickerViewDelegate,  UIPickerViewDataSource, UITextFieldDelegate {
 
     // 
     
@@ -17,15 +17,18 @@ class CardSearchViewController: UIViewController, UIPickerViewDelegate,  UIPicke
         
         setColorRarityPicker.delegate = self
         setColorRarityPicker.dataSource = self
+        cardNameField.delegate = self
         // Do any additional setup after loading the view.
     }
     
+    @IBOutlet weak var cardNameField: UITextField!
     @IBOutlet weak var setColorRarityPicker: UIPickerView!
+    
     lazy var cardSearchModel:CardSearchModel = {
         return CardSearchModel.init() // look into whether or not to make this a "shared instance"
     }()
     
-    // UIPickerViewDelegate Functions:
+    // MARK: - UIPickerViewDelegate Functions:
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 3
     }
@@ -67,15 +70,55 @@ class CardSearchViewController: UIViewController, UIPickerViewDelegate,  UIPicke
         }
     }
     
-
-    /*
+    
+    @IBAction func tapGesture(_ sender: Any) {
+        self.cardNameField.resignFirstResponder()
+    }
+    // MARK: - UITextField Delegation
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    @IBAction func didCancelKeyboard(_ sender: Any) {
+        self.cardNameField.resignFirstResponder()
+    }
+    
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        if let vc = segue.destination as? CardResultsTableViewController {
+            let rowSet = setColorRarityPicker.selectedRow(inComponent: 0)
+            let rowColor = setColorRarityPicker.selectedRow(inComponent: 1)
+            let rowRarity = setColorRarityPicker.selectedRow(inComponent: 2)
+            
+            if rowSet != 0 && rowColor != 0 && rowRarity != 0 {
+                vc.set = cardSearchModel.getSets()[rowSet - 1]
+                vc.color = cardSearchModel.getColors()[rowColor - 1]
+                vc.rarity = cardSearchModel.getRarities()[rowRarity - 1]
+            }
+        }
     }
-    */
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        let rowSet = setColorRarityPicker.selectedRow(inComponent: 0)
+        let rowColor = setColorRarityPicker.selectedRow(inComponent: 1)
+        let rowRarity = setColorRarityPicker.selectedRow(inComponent: 2)
+        if rowSet != 0 && rowColor != 0 && rowRarity != 0 {
+           return true
+        }
+        else{
+            return false
+        }
+        
+    }
+    
 
 }
