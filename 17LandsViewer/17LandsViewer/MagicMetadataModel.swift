@@ -120,7 +120,9 @@ class MagicMetadataModel: NSObject {
                     cards = filter(cards: cards, byRarity: r)
                 }
                 if let n = name {
-                    cards = filter(cards: cards, byName: n)
+                    if n != "" {
+                        cards = filter(cards: cards, byName: n)
+                    }
                 }
                 sortCardsBy(by: "", cards: &cards)
             }
