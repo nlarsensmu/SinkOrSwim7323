@@ -26,6 +26,7 @@
 		FD9C647C26E32B9E002F31DC /* CardSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C647B26E32B9E002F31DC /* CardSearchViewController.swift */; };
 		FD9C647E26E32C72002F31DC /* CardSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C647D26E32C72002F31DC /* CardSearchModel.swift */; };
 		FD9C648026E3E728002F31DC /* CardResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C647F26E3E728002F31DC /* CardResultsTableViewController.swift */; };
+		FD9C648226E41D60002F31DC /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C648126E41D5F002F31DC /* CardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		FD9C647B26E32B9E002F31DC /* CardSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSearchViewController.swift; sourceTree = "<group>"; };
 		FD9C647D26E32C72002F31DC /* CardSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSearchModel.swift; sourceTree = "<group>"; };
 		FD9C647F26E3E728002F31DC /* CardResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardResultsTableViewController.swift; sourceTree = "<group>"; };
+		FD9C648126E41D5F002F31DC /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				FD9C646626E2969D002F31DC /* FirstScreenTableViewController.swift */,
 				FD9C647126E2C72A002F31DC /* MagicMetadataModel.swift */,
 				FD60DDEA26DEFF9900C5AF2C /* Main.storyboard */,
+				FD9C648126E41D5F002F31DC /* CardViewController.swift */,
 				FD9C647726E2DB8A002F31DC /* LeaderBoardViewContorller.swift */,
 				FD9C647926E2F59F002F31DC /* LeaderBoardTableViewController.swift */,
 				FD9C647F26E3E728002F31DC /* CardResultsTableViewController.swift */,
@@ -304,6 +307,7 @@
 				FD9C647226E2C72A002F31DC /* MagicMetadataModel.swift in Sources */,
 				FD60DDE526DEFF9900C5AF2C /* AppDelegate.swift in Sources */,
 				FD9C646726E2969D002F31DC /* FirstScreenTableViewController.swift in Sources */,
+				FD9C648226E41D60002F31DC /* CardViewController.swift in Sources */,
 				FD9C647826E2DB8A002F31DC /* LeaderBoardViewContorller.swift in Sources */,
 				FD60DDE726DEFF9900C5AF2C /* SceneDelegate.swift in Sources */,
 				FD9C647426E2D663002F31DC /* PlayerLeaderBoard.swift in Sources */,
