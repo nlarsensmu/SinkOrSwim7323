@@ -228,11 +228,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xg3-JU-05h">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xg3-JU-05h" customClass="CardImageView" customModule="_7LandsViewer" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="155" width="414" height="308"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="308" id="d3I-Ls-Jes"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="QJL-w8-vWM" appends="YES" id="ix5-F5-bTS"/>
+                                </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not in Deck Win Rate:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mtk-wH-1lK">
                                 <rect key="frame" x="20" y="476" width="166" height="21"/>
@@ -260,6 +264,12 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not Drawn Win Rate:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bux-1Q-Bx7">
                                 <rect key="frame" x="20" y="592" width="158" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23t-f1-BUX">
+                                <rect key="frame" x="335" y="476" width="59" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -303,15 +313,29 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23t-f1-BUX">
-                                <rect key="frame" x="335" y="476" width="59" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Rjh-kx-23b">
+                                <rect key="frame" x="9" y="122" width="113" height="32"/>
+                                <segments>
+                                    <segment title="Image"/>
+                                    <segment title="Text"/>
+                                </segments>
+                                <connections>
+                                    <action selector="updateFromSegmentedControl:" destination="fsO-Gi-WbZ" eventType="valueChanged" id="7XF-MF-bp1"/>
+                                </connections>
+                            </segmentedControl>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="h7b-Se-UlT">
+                                <rect key="frame" x="0.0" y="155" width="414" height="308"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IL4-g9-Fsd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="IL4-g9-Fsd" firstAttribute="trailing" secondItem="EUE-0t-5Iq" secondAttribute="trailing" constant="20" id="0bb-4b-fJf"/>
                             <constraint firstItem="RsU-bk-9Wl" firstAttribute="top" secondItem="JDz-5V-2Dp" secondAttribute="bottom" constant="8" symbolic="YES" id="0z2-gd-qRx"/>
@@ -327,12 +351,14 @@
                             <constraint firstItem="IL4-g9-Fsd" firstAttribute="trailing" secondItem="Qda-rc-ADy" secondAttribute="trailing" constant="20" id="Yon-na-rrl"/>
                             <constraint firstItem="23t-f1-BUX" firstAttribute="top" secondItem="Xg3-JU-05h" secondAttribute="bottom" constant="13" id="ZEz-MV-9Zq"/>
                             <constraint firstItem="Xg3-JU-05h" firstAttribute="width" secondItem="nFd-qG-ZCD" secondAttribute="width" id="ZoR-EJ-kDa"/>
+                            <constraint firstItem="Xg3-JU-05h" firstAttribute="top" secondItem="Rjh-kx-23b" secondAttribute="bottom" constant="3" id="a9X-NB-HyY"/>
                             <constraint firstItem="4g6-3s-3N7" firstAttribute="top" secondItem="kjz-Jh-yRg" secondAttribute="bottom" constant="8" symbolic="YES" id="dTN-lj-sQS"/>
                             <constraint firstItem="Xg3-JU-05h" firstAttribute="centerX" secondItem="IL4-g9-Fsd" secondAttribute="centerX" id="eZY-w7-s80"/>
                             <constraint firstItem="Xz7-PM-PS0" firstAttribute="leading" secondItem="IL4-g9-Fsd" secondAttribute="leading" constant="20" id="epw-zx-stY"/>
                             <constraint firstItem="IL4-g9-Fsd" firstAttribute="trailing" secondItem="23t-f1-BUX" secondAttribute="trailing" constant="20" id="hkS-4c-Dmi"/>
                             <constraint firstItem="kjz-Jh-yRg" firstAttribute="top" secondItem="23t-f1-BUX" secondAttribute="bottom" constant="8" symbolic="YES" id="jhh-hD-z1X"/>
                             <constraint firstItem="Mtk-wH-1lK" firstAttribute="top" secondItem="Xg3-JU-05h" secondAttribute="bottom" constant="13" id="luN-Yd-HOq"/>
+                            <constraint firstItem="Rjh-kx-23b" firstAttribute="leading" secondItem="IL4-g9-Fsd" secondAttribute="leading" id="mna-KX-ZbQ"/>
                             <constraint firstItem="VJA-xb-yhW" firstAttribute="centerX" secondItem="IL4-g9-Fsd" secondAttribute="centerX" id="nWn-6k-09I"/>
                             <constraint firstItem="VJA-xb-yhW" firstAttribute="top" secondItem="IL4-g9-Fsd" secondAttribute="top" constant="38" id="ntT-tB-Ohf"/>
                             <constraint firstItem="UX9-87-4aP" firstAttribute="leading" secondItem="IL4-g9-Fsd" secondAttribute="leading" constant="20" id="qCQ-HP-dPi"/>
@@ -349,8 +375,10 @@
                     <connections>
                         <outlet property="cardImageView" destination="Xg3-JU-05h" id="hxu-ry-S6B"/>
                         <outlet property="cardNameLabel" destination="VJA-xb-yhW" id="Pe6-Jb-Aq9"/>
+                        <outlet property="cardTextView" destination="h7b-Se-UlT" id="2Ue-lx-CaC"/>
                         <outlet property="drawnOneOrLaterLabel" destination="4g6-3s-3N7" id="ieM-5E-Sxw"/>
                         <outlet property="everInHandLabel" destination="ZYD-n1-pv2" id="kwj-7h-WE8"/>
+                        <outlet property="imageTapGesture" destination="QJL-w8-vWM" id="eAW-8j-2FR"/>
                         <outlet property="improvementLabel" destination="EUE-0t-5Iq" id="or7-2t-t61"/>
                         <outlet property="notDrawnLabel" destination="Qda-rc-ADy" id="IkL-zI-07z"/>
                         <outlet property="notInDecklabel" destination="23t-f1-BUX" id="1h9-2M-76h"/>
@@ -358,8 +386,47 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5FQ-xY-3bI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="QJL-w8-vWM">
+                    <connections>
+                        <action selector="tapGestureOnCard:" destination="fsO-Gi-WbZ" id="2o1-Za-F2Y"/>
+                        <segue destination="7cs-Dh-uuD" kind="show" id="HHD-ud-Qat"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2639.130434782609" y="-772.09821428571422"/>
+        </scene>
+        <!--Full Card View Controller-->
+        <scene sceneID="cyc-Dw-7dq">
+            <objects>
+                <viewController id="7cs-Dh-uuD" customClass="FullCardViewController" customModule="_7LandsViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="Mda-7Z-3RY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qQ4-uf-7Ik">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="uxR-Kb-oOg"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="9Oa-Ny-E9o"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ML8-zz-JOY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qQ4-uf-7Ik" firstAttribute="centerY" secondItem="ML8-zz-JOY" secondAttribute="centerY" id="0Ud-a7-Bb7"/>
+                            <constraint firstItem="qQ4-uf-7Ik" firstAttribute="width" secondItem="Mda-7Z-3RY" secondAttribute="width" id="F8M-C6-dE2"/>
+                            <constraint firstItem="qQ4-uf-7Ik" firstAttribute="height" secondItem="Mda-7Z-3RY" secondAttribute="height" multiplier="0.901786" id="ZAZ-Q9-k57"/>
+                            <constraint firstItem="qQ4-uf-7Ik" firstAttribute="top" secondItem="ML8-zz-JOY" secondAttribute="top" id="jcn-Hm-YhE"/>
+                            <constraint firstItem="qQ4-uf-7Ik" firstAttribute="centerX" secondItem="ML8-zz-JOY" secondAttribute="centerX" id="lgQ-JH-Nlj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="uux-1f-ts8"/>
+                    <connections>
+                        <outlet property="scrollView" destination="qQ4-uf-7Ik" id="0aI-ow-xUo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6vg-BK-Ujo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3647.826086956522" y="-774.10714285714278"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="07W-NM-PUx">
@@ -632,6 +699,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

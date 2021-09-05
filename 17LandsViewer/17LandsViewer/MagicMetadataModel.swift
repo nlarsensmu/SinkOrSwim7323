@@ -18,6 +18,7 @@ class MagicMetadataModel: NSObject {
         
         return sharedInstance
     }()
+    
     private var sets =  ["STX","AFR","KHM","ZNR","KLR","M21","AKR","IKO","THB","ELD","M20","WAR","RNA","GRN","M19","DOM","RIX","XLN","MH2","MH1","2XM","TSR","Ravnica","CORE","Cube"];
     private var formats = ["Sealed","PremierDraft","QuickDraft","CompDraft"]
     private var rankings = ["wins","actual rank","win rate","trophies", "trophy rate"]
@@ -100,8 +101,7 @@ class MagicMetadataModel: NSObject {
     }
     
     // MARK: - Get Cards Methods
-    func getCardStatsForSet(expansion: String, format: String, colorsFilter:[String] = [], rarity:String? = nil,
-                            name:String? = nil, sortby:String = "name") -> [Card] {
+    func getCardStatsForSet(expansion: String, format: String, colorsFilter:[String] = [], rarity:String? = nil, name:String? = nil, sortby:String = "name") -> [Card] {
         
             let url : String = "https://www.17lands.com/card_ratings/data?expansion=\(expansion)&format=\(format)&start_date=2021-04-30&end_date=2021-08-31"
             var request = URLRequest(url: URL(string: url)!)
@@ -151,13 +151,6 @@ class MagicMetadataModel: NSObject {
             return cards
     }
     
-    // MARK: SCRYFALL Get
-    func getCardImage(url:String) -> UIImage? {
-        
-        var image:UIImage? = nil
-        return image
-    }
-    
     // MARK: - Fil,ter Functions
     private func filter(cards:[Card], byColors:[String]) -> [Card] {
         var returnedCards: [Card] = []
@@ -179,7 +172,7 @@ class MagicMetadataModel: NSObject {
         var returnedCards: [Card] = []
         
         for card in cards {
-            if card.name.contains(byName) {
+            if card.name.lowercased().contains(byName.lowercased()) {
                 returnedCards.append(card)
             }
         }
