@@ -42,6 +42,7 @@ class LeaderBoardViewContorller: UIViewController, UITextFieldDelegate, UIPicker
         }
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
         if(component == 0){
             if row == 0 {
                 return "Set"
@@ -61,6 +62,7 @@ class LeaderBoardViewContorller: UIViewController, UITextFieldDelegate, UIPicker
             return self.metaDataModel?.getFormats()[row-1]
         }
     }
+
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var searchButton: UIButton!
 
