@@ -30,6 +30,13 @@ class CardViewController: UIViewController {
         DispatchQueue.main.async {
             if let c = self.card {
                 self.cardImageView.downloaded(from: c.url)
+                
+                self.notInDecklabel.text = String(format: "%.2lf%%", c.sideboardWinRate*100)
+                self.openingHandLabel.text = String(format: "%.2lf%%", c.openingHandWinRate*100)
+                self.drawnOneOrLaterLabel.text = String(format: "%.2lf%%", c.drawnWinRate*100)
+                self.everInHandLabel.text = String(format: "%.2lf%%", c.everDrawnWinRate*100)
+                self.notDrawnLabel.text = String(format: "%.2lf%%", c.neverDrawnWinRate*100)
+                self.improvementLabel.text = String(format: "%.2lf%%", c.drawnImprovementWinRate*100)
             }
         }
         // Do any additional setup after loading the view.
