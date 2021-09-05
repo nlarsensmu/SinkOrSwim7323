@@ -21,8 +21,15 @@ class MagicMetadataModel: NSObject {
     private var sets =  ["STX","AFR","KHM","ZNR","KLR","M21","AKR","IKO","THB","ELD","M20","WAR","RNA","GRN","M19","DOM","RIX","XLN","MH2","MH1","2XM","TSR","Ravnica","CORE","Cube"];
     private var formats = ["Sealed","PremierDraft","QuickDraft","CompDraft"]
     private var rankings = ["wins","actual rank","win rate","trophies", "trophy rate"]
+    private var currentLeaders:[Player] = []
+    private var lastSet = ""
+    private var lastFormat = ""
+    private var lastRanking = ""
     
     func getLeaderBoards(expansion: String, format: String, ranking: String) -> [Player]? {
+        if format == self.lastFormat && ranking == self.lastRanking && expansion == self.lastSet {
+            return self.currentLeaders
+        }
         let url : String = "https://www.17lands.com/data/leaderboard?expansion=\(expansion)&format=\(format)"
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "GET"
@@ -67,9 +74,21 @@ class MagicMetadataModel: NSObject {
         default:
             players = []
         }
+        self.lastSet = expansion
+        self.lastFormat = format
+        self.lastRanking = ranking
+        self.currentLeaders = players
         return players
     }
-    
+    func getPlayer(index:Int) -> Player? {
+        //assumes that the currentLeaders is populated with less than index of players
+        if index < self.currentLeaders.count {
+            return self.currentLeaders[index]
+        }
+        else{
+            return nil
+        }
+    }
     func getSets() -> [String]{
         return self.sets
     }
