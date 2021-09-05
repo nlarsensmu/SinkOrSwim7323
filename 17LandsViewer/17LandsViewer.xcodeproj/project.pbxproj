@@ -29,6 +29,8 @@
 		FD9C648226E41D60002F31DC /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C648126E41D5F002F31DC /* CardViewController.swift */; };
 		FD9C648426E47BA7002F31DC /* FullCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C648326E47BA7002F31DC /* FullCardViewController.swift */; };
 		FD9C648626E47FDA002F31DC /* CardImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C648526E47FDA002F31DC /* CardImageView.swift */; };
+		FD9C648826E49124002F31DC /* ScryFallModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C648726E49124002F31DC /* ScryFallModel.swift */; };
+		FD9C648A26E49785002F31DC /* ScryFallCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C648926E49785002F31DC /* ScryFallCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		FD9C648126E41D5F002F31DC /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		FD9C648326E47BA7002F31DC /* FullCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullCardViewController.swift; sourceTree = "<group>"; };
 		FD9C648526E47FDA002F31DC /* CardImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageView.swift; sourceTree = "<group>"; };
+		FD9C648726E49124002F31DC /* ScryFallModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScryFallModel.swift; sourceTree = "<group>"; };
+		FD9C648926E49785002F31DC /* ScryFallCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScryFallCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +156,8 @@
 				FD9C647526E2D6DB002F31DC /* Card.swift */,
 				FD9C646826E29AB2002F31DC /* 17LandsViewer-Bridging-Header.h */,
 				B0A9399D26E402A70039E1FF /* PlayerViewController.swift */,
+				FD9C648726E49124002F31DC /* ScryFallModel.swift */,
+				FD9C648926E49785002F31DC /* ScryFallCard.swift */,
 			);
 			path = 17LandsViewer;
 			sourceTree = "<group>";
@@ -312,8 +318,10 @@
 				FD9C647C26E32B9E002F31DC /* CardSearchViewController.swift in Sources */,
 				FD60DDE926DEFF9900C5AF2C /* ViewController.swift in Sources */,
 				FD9C647226E2C72A002F31DC /* MagicMetadataModel.swift in Sources */,
+				FD9C648826E49124002F31DC /* ScryFallModel.swift in Sources */,
 				FD60DDE526DEFF9900C5AF2C /* AppDelegate.swift in Sources */,
 				FD9C646726E2969D002F31DC /* FirstScreenTableViewController.swift in Sources */,
+				FD9C648A26E49785002F31DC /* ScryFallCard.swift in Sources */,
 				FD9C648226E41D60002F31DC /* CardViewController.swift in Sources */,
 				FD9C647826E2DB8A002F31DC /* LeaderBoardViewContorller.swift in Sources */,
 				FD60DDE726DEFF9900C5AF2C /* SceneDelegate.swift in Sources */,

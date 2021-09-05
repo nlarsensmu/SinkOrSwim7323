@@ -48,7 +48,7 @@ class Card{
             self.neverDrawnGameCount = neverDrawnGameCount
             self.neverDrawnWinRate = neverDrawnWinRate
             self.drawnImprovementWinRate = drawnImprovementWinRate
-            self.name = name.lowercased()
+            self.name = name
             self.color = color
             self.rarity = rarity
             self.url = url

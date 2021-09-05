@@ -268,6 +268,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23t-f1-BUX">
+                                <rect key="frame" x="335" y="476" width="59" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjz-Jh-yRg">
                                 <rect key="frame" x="335" y="505" width="59" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -307,12 +313,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23t-f1-BUX">
-                                <rect key="frame" x="335" y="476" width="59" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Rjh-kx-23b">
+                                <rect key="frame" x="9" y="122" width="113" height="32"/>
+                                <segments>
+                                    <segment title="Image"/>
+                                    <segment title="Text"/>
+                                </segments>
+                                <connections>
+                                    <action selector="updateFromSegmentedControl:" destination="fsO-Gi-WbZ" eventType="valueChanged" id="7XF-MF-bp1"/>
+                                </connections>
+                            </segmentedControl>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="h7b-Se-UlT">
+                                <rect key="frame" x="0.0" y="155" width="414" height="308"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IL4-g9-Fsd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -332,12 +351,14 @@
                             <constraint firstItem="IL4-g9-Fsd" firstAttribute="trailing" secondItem="Qda-rc-ADy" secondAttribute="trailing" constant="20" id="Yon-na-rrl"/>
                             <constraint firstItem="23t-f1-BUX" firstAttribute="top" secondItem="Xg3-JU-05h" secondAttribute="bottom" constant="13" id="ZEz-MV-9Zq"/>
                             <constraint firstItem="Xg3-JU-05h" firstAttribute="width" secondItem="nFd-qG-ZCD" secondAttribute="width" id="ZoR-EJ-kDa"/>
+                            <constraint firstItem="Xg3-JU-05h" firstAttribute="top" secondItem="Rjh-kx-23b" secondAttribute="bottom" constant="3" id="a9X-NB-HyY"/>
                             <constraint firstItem="4g6-3s-3N7" firstAttribute="top" secondItem="kjz-Jh-yRg" secondAttribute="bottom" constant="8" symbolic="YES" id="dTN-lj-sQS"/>
                             <constraint firstItem="Xg3-JU-05h" firstAttribute="centerX" secondItem="IL4-g9-Fsd" secondAttribute="centerX" id="eZY-w7-s80"/>
                             <constraint firstItem="Xz7-PM-PS0" firstAttribute="leading" secondItem="IL4-g9-Fsd" secondAttribute="leading" constant="20" id="epw-zx-stY"/>
                             <constraint firstItem="IL4-g9-Fsd" firstAttribute="trailing" secondItem="23t-f1-BUX" secondAttribute="trailing" constant="20" id="hkS-4c-Dmi"/>
                             <constraint firstItem="kjz-Jh-yRg" firstAttribute="top" secondItem="23t-f1-BUX" secondAttribute="bottom" constant="8" symbolic="YES" id="jhh-hD-z1X"/>
                             <constraint firstItem="Mtk-wH-1lK" firstAttribute="top" secondItem="Xg3-JU-05h" secondAttribute="bottom" constant="13" id="luN-Yd-HOq"/>
+                            <constraint firstItem="Rjh-kx-23b" firstAttribute="leading" secondItem="IL4-g9-Fsd" secondAttribute="leading" id="mna-KX-ZbQ"/>
                             <constraint firstItem="VJA-xb-yhW" firstAttribute="centerX" secondItem="IL4-g9-Fsd" secondAttribute="centerX" id="nWn-6k-09I"/>
                             <constraint firstItem="VJA-xb-yhW" firstAttribute="top" secondItem="IL4-g9-Fsd" secondAttribute="top" constant="38" id="ntT-tB-Ohf"/>
                             <constraint firstItem="UX9-87-4aP" firstAttribute="leading" secondItem="IL4-g9-Fsd" secondAttribute="leading" constant="20" id="qCQ-HP-dPi"/>
@@ -354,6 +375,7 @@
                     <connections>
                         <outlet property="cardImageView" destination="Xg3-JU-05h" id="hxu-ry-S6B"/>
                         <outlet property="cardNameLabel" destination="VJA-xb-yhW" id="Pe6-Jb-Aq9"/>
+                        <outlet property="cardTextView" destination="h7b-Se-UlT" id="2Ue-lx-CaC"/>
                         <outlet property="drawnOneOrLaterLabel" destination="4g6-3s-3N7" id="ieM-5E-Sxw"/>
                         <outlet property="everInHandLabel" destination="ZYD-n1-pv2" id="kwj-7h-WE8"/>
                         <outlet property="imageTapGesture" destination="QJL-w8-vWM" id="eAW-8j-2FR"/>
@@ -664,6 +686,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
