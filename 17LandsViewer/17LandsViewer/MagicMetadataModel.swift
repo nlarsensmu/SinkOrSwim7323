@@ -94,7 +94,7 @@ class MagicMetadataModel: NSObject {
             let sem = DispatchSemaphore.init(value: 0)
             
             var cardsData: NSArray = []
-        var cards: [Card] = []
+            var cards: [Card] = []
             let task = session.dataTask(with: request) { data, response, error in
                 defer { sem.signal() }
                 
@@ -120,7 +120,9 @@ class MagicMetadataModel: NSObject {
                     cards = filter(cards: cards, byRarity: r)
                 }
                 if let n = name {
-                    cards = filter(cards: cards, byName: n)
+                    if n != "" {
+                        cards = filter(cards: cards, byName: n)
+                    }
                 }
                 sortCardsBy(by: "", cards: &cards)
             }
@@ -130,7 +132,14 @@ class MagicMetadataModel: NSObject {
             return cards
     }
     
-    // MARK: - Filter Functions
+    // MARK: SCRYFALL Get
+    func getCardImage(url:String) -> UIImage? {
+        
+        var image:UIImage? = nil
+        return image
+    }
+    
+    // MARK: - Fil,ter Functions
     private func filter(cards:[Card], byColors:[String]) -> [Card] {
         var returnedCards: [Card] = []
         
@@ -168,6 +177,7 @@ class MagicMetadataModel: NSObject {
         return returnCards
     }
     
+    // MARK: - MISC Functions
     private func translateColors(colorsUntranslated:[String]) -> [String]{
         var returnColors: [String] = []
         for color in colorsUntranslated {

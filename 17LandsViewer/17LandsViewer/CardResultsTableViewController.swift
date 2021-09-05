@@ -22,22 +22,14 @@ class CardResultsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let n:String = {
-            if let n = self.name {
-                return n
-            }
-            return ""
-        }()
         
-        if let s = self.set, let c = self.color, let r = self.rarity, let f = self.format {
-            print("\(n) \(s) \(c) \(r)")
-            
-            if let results = metaDataModel?.getCardStatsForSet(expansion: s, format: f, colorsFilter: [c], rarity: r,
-                                                               name: n) {
-                self.results = results
-            }
-            
+        var colors:[String] = []
+        if let c = self.color {
+            colors = [c]
+        }        
+        
+        if let s = self.set, let f = self.format, let results = metaDataModel?.getCardStatsForSet(expansion: s, format: f, colorsFilter: colors, rarity: self.rarity, name: self.name) {
+            self.results = results
         }
         
         // Uncomment the following line to preserve selection between presentations
@@ -105,14 +97,20 @@ class CardResultsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        if let vc = segue.destination as? CardViewController,
+           let cell = sender as? UITableViewCell,
+           let indexPath = self.tableView.indexPath(for:cell){
+            vc.card = results[indexPath.row]
+        }
     }
-    */
+    
 
 }

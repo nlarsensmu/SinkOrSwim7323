@@ -106,11 +106,19 @@ class CardSearchViewController: UIViewController, UIPickerViewDelegate,  UIPicke
             let rowRarity = setColorRarityPicker.selectedRow(inComponent: 2)
             let rowFormat = setColorRarityPicker.selectedRow(inComponent: 3)
             
-            if rowSet != 0 && rowColor != 0 && rowRarity != 0 {
+            if cardNameField.text != "" {
                 vc.name = cardNameField.text
+            }
+            if rowSet != 0 {
                 vc.set = cardSearchModel.getSets()[rowSet - 1]
+            }
+            if rowColor != 0 {
                 vc.color = cardSearchModel.getColors()[rowColor - 1]
+            }
+            if rowRarity != 0 {
                 vc.rarity = cardSearchModel.getRarities()[rowRarity - 1]
+            }
+            if rowFormat != 0 {
                 vc.format = cardSearchModel.getFormats()[rowFormat - 1]
             }
         }
@@ -118,17 +126,12 @@ class CardSearchViewController: UIViewController, UIPickerViewDelegate,  UIPicke
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         let rowSet = setColorRarityPicker.selectedRow(inComponent: 0)
-        let rowColor = setColorRarityPicker.selectedRow(inComponent: 1)
-        let rowRarity = setColorRarityPicker.selectedRow(inComponent: 2)
         let rowFormat = setColorRarityPicker.selectedRow(inComponent: 3)
-        if rowSet != 0 && rowColor != 0 && rowRarity != 0 && rowFormat != 0{
+        if rowSet != 0 && rowFormat != 0{
            return true
         }
         else{
             return false
         }
-        
     }
-    
-
 }
