@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B0A9399E26E402A70039E1FF /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A9399D26E402A70039E1FF /* PlayerViewController.swift */; };
+		B0A939A026E475970039E1FF /* DraftHelperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A9399F26E475970039E1FF /* DraftHelperViewController.swift */; };
+		B0A939A826E487650039E1FF /* DraftHelperCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A939A726E487650039E1FF /* DraftHelperCollectionViewController.swift */; };
 		FD60DDE526DEFF9900C5AF2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD60DDE426DEFF9900C5AF2C /* AppDelegate.swift */; };
 		FD60DDE726DEFF9900C5AF2C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD60DDE626DEFF9900C5AF2C /* SceneDelegate.swift */; };
 		FD60DDE926DEFF9900C5AF2C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD60DDE826DEFF9900C5AF2C /* ViewController.swift */; };
@@ -48,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		B0A9399D26E402A70039E1FF /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		B0A9399F26E475970039E1FF /* DraftHelperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftHelperViewController.swift; sourceTree = "<group>"; };
+		B0A939A726E487650039E1FF /* DraftHelperCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftHelperCollectionViewController.swift; sourceTree = "<group>"; };
 		FD60DDE126DEFF9900C5AF2C /* 17LandsViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 17LandsViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD60DDE426DEFF9900C5AF2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD60DDE626DEFF9900C5AF2C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +150,8 @@
 				FD9C647526E2D6DB002F31DC /* Card.swift */,
 				FD9C646826E29AB2002F31DC /* 17LandsViewer-Bridging-Header.h */,
 				B0A9399D26E402A70039E1FF /* PlayerViewController.swift */,
+				B0A9399F26E475970039E1FF /* DraftHelperViewController.swift */,
+				B0A939A726E487650039E1FF /* DraftHelperCollectionViewController.swift */,
 			);
 			path = 17LandsViewer;
 			sourceTree = "<group>";
@@ -306,9 +312,11 @@
 				FD60DDE926DEFF9900C5AF2C /* ViewController.swift in Sources */,
 				FD9C647226E2C72A002F31DC /* MagicMetadataModel.swift in Sources */,
 				FD60DDE526DEFF9900C5AF2C /* AppDelegate.swift in Sources */,
+				B0A939A826E487650039E1FF /* DraftHelperCollectionViewController.swift in Sources */,
 				FD9C646726E2969D002F31DC /* FirstScreenTableViewController.swift in Sources */,
 				FD9C648226E41D60002F31DC /* CardViewController.swift in Sources */,
 				FD9C647826E2DB8A002F31DC /* LeaderBoardViewContorller.swift in Sources */,
+				B0A939A026E475970039E1FF /* DraftHelperViewController.swift in Sources */,
 				FD60DDE726DEFF9900C5AF2C /* SceneDelegate.swift in Sources */,
 				FD9C647426E2D663002F31DC /* PlayerLeaderBoard.swift in Sources */,
 				FD9C647626E2D6DB002F31DC /* Card.swift in Sources */,
