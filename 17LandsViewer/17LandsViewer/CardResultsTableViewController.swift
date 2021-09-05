@@ -30,8 +30,6 @@ class CardResultsTableViewController: UITableViewController {
         
         if let s = self.set, let f = self.format, let results = metaDataModel?.getCardStatsForSet(expansion: s, format: f, colorsFilter: colors, rarity: self.rarity, name: self.name) {
             self.results = results
-        
-        
         }
         
         // Uncomment the following line to preserve selection between presentations
@@ -107,8 +105,10 @@ class CardResultsTableViewController: UITableViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         
-        if let vc = segue.destination as? CardViewController {
-            vc.cardName = self.name
+        if let vc = segue.destination as? CardViewController,
+           let cell = sender as? UITableViewCell,
+           let indexPath = self.tableView.indexPath(for:cell){
+            vc.card = results[indexPath.row]
         }
     }
     

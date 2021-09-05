@@ -133,8 +133,5 @@ class CardSearchViewController: UIViewController, UIPickerViewDelegate,  UIPicke
         else{
             return false
         }
-        
     }
-    
-
 }
