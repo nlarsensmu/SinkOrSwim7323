@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -58,7 +59,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="eql-nI-WCv" kind="show" id="2K8-mR-jWV"/>
+                                    <segue destination="TfV-xg-mPP" kind="show" id="xwn-3H-x5C"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -399,7 +400,7 @@
         <scene sceneID="cyc-Dw-7dq">
             <objects>
                 <viewController id="7cs-Dh-uuD" customClass="FullCardViewController" customModule="_7LandsViewer" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="Mda-7Z-3RY">
+                    <view key="view" contentMode="scaleToFill" id="Mda-7Z-3RY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -427,31 +428,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6vg-BK-Ujo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3647.826086956522" y="-774.10714285714278"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="07W-NM-PUx">
-            <objects>
-                <viewController id="eql-nI-WCv" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="dPT-zH-1bD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Draft Helper" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6U-4F-Kpq">
-                                <rect key="frame" x="167" y="438" width="94" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="lxR-e5-euC"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="RJq-Sj-R8c"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1mT-hl-n3O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="473.91304347826093" y="1243.5267857142856"/>
         </scene>
         <!--Leader Board View Contorller-->
         <scene sceneID="7da-Cn-P7U">
@@ -502,6 +478,153 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lVf-dr-6MA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="473.91304347826093" y="532.36607142857144"/>
+        </scene>
+        <!--Draft View Controller-->
+        <scene sceneID="xVy-as-VZo">
+            <objects>
+                <viewController id="TfV-xg-mPP" customClass="DraftViewController" customModule="_7LandsViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YoG-Pp-jIf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n2K-Rb-iwD">
+                                <rect key="frame" x="0.0" y="367" width="414" height="216"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ags-gz-dWG">
+                                <rect key="frame" x="177" y="569" width="61" height="30"/>
+                                <state key="normal" title="Get Help"/>
+                                <connections>
+                                    <segue destination="D1H-bM-oq3" kind="show" id="dHk-jK-J1m"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="q2i-kn-fEA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="n2K-Rb-iwD" firstAttribute="centerY" secondItem="q2i-kn-fEA" secondAttribute="centerY" id="7c9-ir-6m1"/>
+                            <constraint firstItem="ags-gz-dWG" firstAttribute="firstBaseline" secondItem="n2K-Rb-iwD" secondAttribute="baseline" constant="22" symbolType="layoutAnchor" id="LB8-Eq-ZL6"/>
+                            <constraint firstItem="ags-gz-dWG" firstAttribute="top" secondItem="n2K-Rb-iwD" secondAttribute="bottom" constant="8" symbolic="YES" id="SNQ-oE-kow"/>
+                            <constraint firstItem="n2K-Rb-iwD" firstAttribute="centerX" secondItem="q2i-kn-fEA" secondAttribute="centerX" id="hZW-xe-FOL"/>
+                            <constraint firstItem="ags-gz-dWG" firstAttribute="centerX" secondItem="q2i-kn-fEA" secondAttribute="centerX" id="nOe-c3-Ose"/>
+                            <constraint firstItem="n2K-Rb-iwD" firstAttribute="width" secondItem="YoG-Pp-jIf" secondAttribute="width" id="qiN-oN-nAg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="V0V-da-NsR"/>
+                    <connections>
+                        <outlet property="formatSetPicker" destination="n2K-Rb-iwD" id="ujL-9R-fNX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wfp-Yu-w4Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="455" y="1206"/>
+        </scene>
+        <!--Draft Helper Cards View Controller-->
+        <scene sceneID="2Zu-Kt-pff">
+            <objects>
+                <viewController id="D1H-bM-oq3" customClass="DraftHelperCardsViewController" customModule="_7LandsViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AiR-ay-chI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LtP-42-HTE">
+                                <rect key="frame" x="0.0" y="181" width="414" height="672"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="A4z-VV-juR">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cardCollectionViewCell" id="9Fv-op-yi3" customClass="CardCollectionViewCell" customModule="_7LandsViewer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="x1t-Rd-yV5">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Qb-bz-LD2" customClass="CardImageView" customModule="_7LandsViewer" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3Qb-bz-LD2" firstAttribute="width" secondItem="x1t-Rd-yV5" secondAttribute="width" id="3VA-IH-B3K"/>
+                                                <constraint firstItem="3Qb-bz-LD2" firstAttribute="height" secondItem="x1t-Rd-yV5" secondAttribute="height" id="TVc-4q-lCS"/>
+                                                <constraint firstItem="3Qb-bz-LD2" firstAttribute="centerY" secondItem="x1t-Rd-yV5" secondAttribute="centerY" id="WMb-rk-2FI"/>
+                                                <constraint firstItem="3Qb-bz-LD2" firstAttribute="centerX" secondItem="x1t-Rd-yV5" secondAttribute="centerX" id="caL-Mc-Jn7"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageView" destination="3Qb-bz-LD2" id="lmC-nU-lqt"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Card Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6mh-n7-4gb">
+                                <rect key="frame" x="0.0" y="148" width="414" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="didCancelKeyboard:" destination="D1H-bM-oq3" eventType="editingDidEnd" id="rhS-A1-eZY"/>
+                                    <segue destination="zXh-yx-fXw" kind="popoverPresentation" popoverAnchorView="6mh-n7-4gb" id="JYL-pr-52X">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="n0I-8c-FLm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LtP-42-HTE" firstAttribute="height" secondItem="AiR-ay-chI" secondAttribute="height" multiplier="0.75" id="GMw-OO-pUC"/>
+                            <constraint firstItem="n0I-8c-FLm" firstAttribute="bottom" secondItem="LtP-42-HTE" secondAttribute="bottom" constant="9" id="KlB-eJ-hUK"/>
+                            <constraint firstItem="LtP-42-HTE" firstAttribute="width" secondItem="AiR-ay-chI" secondAttribute="width" id="epj-My-Dvq"/>
+                            <constraint firstItem="6mh-n7-4gb" firstAttribute="centerX" secondItem="n0I-8c-FLm" secondAttribute="centerX" id="fq9-hm-6C3"/>
+                            <constraint firstItem="6mh-n7-4gb" firstAttribute="width" secondItem="AiR-ay-chI" secondAttribute="width" id="o77-wd-HwM"/>
+                            <constraint firstItem="LtP-42-HTE" firstAttribute="firstBaseline" secondItem="6mh-n7-4gb" secondAttribute="baseline" constant="11" symbolType="layoutAnchor" id="rzs-hL-hC9"/>
+                            <constraint firstItem="LtP-42-HTE" firstAttribute="centerX" secondItem="n0I-8c-FLm" secondAttribute="centerX" id="tB0-1G-CPn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="wev-yc-2cE"/>
+                    <connections>
+                        <outlet property="cardNameTextField" destination="6mh-n7-4gb" id="mt9-xI-MZz"/>
+                        <outlet property="collectionView" destination="LtP-42-HTE" id="xS0-Tq-dwE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n7K-2W-T9e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1666.6666666666667" y="1202.6785714285713"/>
+        </scene>
+        <!--Card Results Pop Up Table View Controller-->
+        <scene sceneID="Ieo-j2-0wf">
+            <objects>
+                <tableViewController id="zXh-yx-fXw" customClass="CardResultsPopUpTableViewController" customModule="_7LandsViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wlr-mt-frQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cardResultCell" id="Tfv-3w-ac8">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tfv-3w-ac8" id="bTK-M4-rU9">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="zXh-yx-fXw" id="MUq-Yh-gLY"/>
+                            <outlet property="delegate" destination="zXh-yx-fXw" id="4p4-Lr-5n0"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Nx4-pc-DbJ"/>
+                    <connections>
+                        <outlet property="navigationItem" destination="Nx4-pc-DbJ" id="08C-WJ-GNN"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6cD-Xh-b6s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2509" y="1213"/>
         </scene>
         <!--Leader Board Table View Controller-->
         <scene sceneID="MnU-hZ-yQ1">
