@@ -18,6 +18,7 @@ class CardResultsTableViewController: UITableViewController {
     
     var results:[Card] = []
     
+    
     weak private var metaDataModel:MagicMetadataModel? = MagicMetadataModel.sharedInstance
     
     override func viewDidLoad() {
@@ -60,7 +61,6 @@ class CardResultsTableViewController: UITableViewController {
 
         return cell
     }
-    
 
     /*
     // Override to support conditional editing of the table view.
@@ -109,6 +109,10 @@ class CardResultsTableViewController: UITableViewController {
            let cell = sender as? UITableViewCell,
            let indexPath = self.tableView.indexPath(for:cell){
             vc.card = results[indexPath.row]
+        }
+        
+        if let vc = segue.destination as?  DraftViewController {
+            print(vc)
         }
     }
     

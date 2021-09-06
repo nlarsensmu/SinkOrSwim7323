@@ -31,6 +31,10 @@
 		FD9C648626E47FDA002F31DC /* CardImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C648526E47FDA002F31DC /* CardImageView.swift */; };
 		FD9C648826E49124002F31DC /* ScryFallModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C648726E49124002F31DC /* ScryFallModel.swift */; };
 		FD9C648A26E49785002F31DC /* ScryFallCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C648926E49785002F31DC /* ScryFallCard.swift */; };
+		FD9C648E26E52832002F31DC /* DraftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C648D26E52832002F31DC /* DraftViewController.swift */; };
+		FD9C649026E535C1002F31DC /* DraftHelperCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C648F26E535C1002F31DC /* DraftHelperCardsViewController.swift */; };
+		FD9C649226E5C46E002F31DC /* CardResultsPopUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C649126E5C46E002F31DC /* CardResultsPopUpTableViewController.swift */; };
+		FD9C649426E5CD65002F31DC /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C649326E5CD65002F31DC /* CardCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +87,10 @@
 		FD9C648526E47FDA002F31DC /* CardImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageView.swift; sourceTree = "<group>"; };
 		FD9C648726E49124002F31DC /* ScryFallModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScryFallModel.swift; sourceTree = "<group>"; };
 		FD9C648926E49785002F31DC /* ScryFallCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScryFallCard.swift; sourceTree = "<group>"; };
+		FD9C648D26E52832002F31DC /* DraftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftViewController.swift; sourceTree = "<group>"; };
+		FD9C648F26E535C1002F31DC /* DraftHelperCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftHelperCardsViewController.swift; sourceTree = "<group>"; };
+		FD9C649126E5C46E002F31DC /* CardResultsPopUpTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardResultsPopUpTableViewController.swift; sourceTree = "<group>"; };
+		FD9C649326E5CD65002F31DC /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,18 +141,22 @@
 		FD60DDE326DEFF9900C5AF2C /* 17LandsViewer */ = {
 			isa = PBXGroup;
 			children = (
+				FD9C648F26E535C1002F31DC /* DraftHelperCardsViewController.swift */,
+				FD9C649326E5CD65002F31DC /* CardCollectionViewCell.swift */,
 				FD60DDE426DEFF9900C5AF2C /* AppDelegate.swift */,
 				FD60DDE626DEFF9900C5AF2C /* SceneDelegate.swift */,
 				FD60DDE826DEFF9900C5AF2C /* ViewController.swift */,
 				FD9C646626E2969D002F31DC /* FirstScreenTableViewController.swift */,
 				FD9C647126E2C72A002F31DC /* MagicMetadataModel.swift */,
 				FD60DDEA26DEFF9900C5AF2C /* Main.storyboard */,
+				FD9C648D26E52832002F31DC /* DraftViewController.swift */,
 				FD9C647726E2DB8A002F31DC /* LeaderBoardViewContorller.swift */,
 				FD9C647926E2F59F002F31DC /* LeaderBoardTableViewController.swift */,
 				FD9C648326E47BA7002F31DC /* FullCardViewController.swift */,
 				FD9C648126E41D5F002F31DC /* CardViewController.swift */,
 				FD9C648526E47FDA002F31DC /* CardImageView.swift */,
 				FD9C647F26E3E728002F31DC /* CardResultsTableViewController.swift */,
+				FD9C649126E5C46E002F31DC /* CardResultsPopUpTableViewController.swift */,
 				FD9C647B26E32B9E002F31DC /* CardSearchViewController.swift */,
 				FD9C647D26E32C72002F31DC /* CardSearchModel.swift */,
 				FD60DDED26DEFF9A00C5AF2C /* Assets.xcassets */,
@@ -318,15 +330,19 @@
 				FD9C647C26E32B9E002F31DC /* CardSearchViewController.swift in Sources */,
 				FD60DDE926DEFF9900C5AF2C /* ViewController.swift in Sources */,
 				FD9C647226E2C72A002F31DC /* MagicMetadataModel.swift in Sources */,
+				FD9C649226E5C46E002F31DC /* CardResultsPopUpTableViewController.swift in Sources */,
 				FD9C648826E49124002F31DC /* ScryFallModel.swift in Sources */,
 				FD60DDE526DEFF9900C5AF2C /* AppDelegate.swift in Sources */,
 				FD9C646726E2969D002F31DC /* FirstScreenTableViewController.swift in Sources */,
 				FD9C648A26E49785002F31DC /* ScryFallCard.swift in Sources */,
 				FD9C648226E41D60002F31DC /* CardViewController.swift in Sources */,
 				FD9C647826E2DB8A002F31DC /* LeaderBoardViewContorller.swift in Sources */,
+				FD9C649426E5CD65002F31DC /* CardCollectionViewCell.swift in Sources */,
 				FD60DDE726DEFF9900C5AF2C /* SceneDelegate.swift in Sources */,
 				FD9C647426E2D663002F31DC /* PlayerLeaderBoard.swift in Sources */,
 				FD9C647626E2D6DB002F31DC /* Card.swift in Sources */,
+				FD9C648E26E52832002F31DC /* DraftViewController.swift in Sources */,
+				FD9C649026E535C1002F31DC /* DraftHelperCardsViewController.swift in Sources */,
 				FD9C648626E47FDA002F31DC /* CardImageView.swift in Sources */,
 				B0A9399E26E402A70039E1FF /* PlayerViewController.swift in Sources */,
 				FD9C647A26E2F59F002F31DC /* LeaderBoardTableViewController.swift in Sources */,
