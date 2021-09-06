@@ -51,7 +51,7 @@ class LeaderBoardViewContorller: UIViewController, UITextFieldDelegate, UIPicker
         }
         else if (component == 1){
             if row == 0 {
-                return "Rank"
+                return "Ranking"
             }
             return self.metaDataModel?.getRanking()[row-1]
         }

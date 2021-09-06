@@ -14,18 +14,25 @@ class LeaderBoardTableViewController: UITableViewController {
     var set:String?
     var format:String?
     var ranking:String?
-    var topPlayers:[Player] = []
+    var timer: Timer? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         if let s = self.set, let f = self.format, let r = self.ranking {
             
-            if let players = metaDataModel?.getLeaderBoards(expansion: s, format: f, ranking: r) {
-                print("there are \(players.count) players in the \(r) leaderboard")
-                self.topPlayers = players
-            }
-            
         }
+        let timer = Timer.scheduledTimer(withTimeInterval: 30.0, repeats: true, block: { timer in
+            if  let s = self.set, let f = self.format, let r = self.ranking,
+                let tp = self.metaDataModel?.getLeaderBoards(expansion: s, format: f, ranking: r, lazy: false) {
+                    print("there are \(tp.count) players in the \(r) leaderboard")
+                    //reload the table
+                }
+        })
+        let loop: RunLoop = RunLoop()
+        loop.add(timer, forMode: RunLoop.Mode.common)
+        
+        
+        self.timer = timer
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -43,32 +50,47 @@ class LeaderBoardTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return self.topPlayers.count
+        if let model = self.metaDataModel,
+           let s = self.set, let f = self.format, let r = self.ranking,
+           let players =  model.getLeaderBoards(expansion: s, format: f , ranking: r ){
+            return players.count
+        }
+        return 0
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "playerCell", for: indexPath)
         let index = indexPath.row
-        // Configure the cell...
-        cell.textLabel?.text = "\(index + 1). \(self.topPlayers[indexPath.row].screenName)"
-        
-        if let r = self.ranking {
-            switch r {
-            case "rank":
-                cell.detailTextLabel?.text = self.topPlayers[indexPath.row].rank
-            case "matchWins":
-                cell.detailTextLabel?.text = String(format: "%f", self.topPlayers[indexPath.row].winRate)
-            case "trophies":
-                cell.detailTextLabel?.text = String(format: "%d", self.topPlayers[indexPath.row].trophies)
-            case "wins":
-                cell.detailTextLabel?.text = String(format: "%d", self.topPlayers[indexPath.row].wins)
-            default:
-                cell.detailTextLabel?.text = "No data"
+        var topPlayers: [Player]  = []
+        DispatchQueue.main.async {
+            if let model = self.metaDataModel,
+               let s = self.set, let f = self.format, let r = self.ranking,
+               let players =  model.getLeaderBoards(expansion: s, format: f , ranking: r ){
+                topPlayers = players
             }
             
+            // Configure the cell...
+            cell.textLabel?.text = "\(index + 1). \(topPlayers[indexPath.row].screenName)"
+            
+            if let r = self.ranking {
+                switch r {
+                case "rank":
+                    cell.detailTextLabel?.text = topPlayers[indexPath.row].rank
+                case "win rate":
+                    cell.detailTextLabel?.text = String(format: "%.2lf%%", topPlayers[indexPath.row].winRate * 100)
+                case "trophies":
+                    cell.detailTextLabel?.text = String(format: "%d", topPlayers[indexPath.row].trophies)
+                case "wins":
+                    cell.detailTextLabel?.text = String(format: "%d", topPlayers[indexPath.row].wins)
+                case "trophy rate":
+                    cell.detailTextLabel?.text = String(format: "%.2lf%%", topPlayers[indexPath.row].trophyRate * 100)
+                default:
+                    cell.detailTextLabel?.text = "No data"
+                }
+                
+            }
         }
-
         return cell
     }
     
@@ -124,6 +146,12 @@ class LeaderBoardTableViewController: UITableViewController {
                let leaderboard = self.metaDataModel?.getLeaderBoards(expansion: s, format: f, ranking: r) {
                 playerController.player = leaderboard[index]
                 playerController.rank = index + 1
+                if let model = self.metaDataModel,
+                   let s = self.set, let f = self.format, let r = self.ranking,
+                   let players =  model.getLeaderBoards(expansion: s, format: f , ranking: r ){
+                    playerController.maxValue = players.count
+                }
+                playerController.minValue = 1
             }
         }
     }

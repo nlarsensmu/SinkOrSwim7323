@@ -20,15 +20,15 @@ class MagicMetadataModel: NSObject {
     }()
     
     private var sets =  ["STX","AFR","KHM","ZNR","KLR","M21","AKR","IKO","THB","ELD","M20","WAR","RNA","GRN","M19","DOM","RIX","XLN","MH2","MH1","2XM","TSR","Ravnica","CORE","Cube"];
-    private var formats = ["Sealed","PremierDraft","QuickDraft","CompDraft"]
+    private var formats = ["Sealed","PremierDraft","QuickDraft","TradDraft"]
     private var rankings = ["wins","actual rank","win rate","trophies", "trophy rate"]
     private var currentLeaders:[Player] = []
     private var lastSet = ""
     private var lastFormat = ""
     private var lastRanking = ""
     
-    func getLeaderBoards(expansion: String, format: String, ranking: String) -> [Player]? {
-        if format == self.lastFormat && ranking == self.lastRanking && expansion == self.lastSet {
+    func getLeaderBoards(expansion: String, format: String, ranking: String, lazy:Bool = true) -> [Player]? {
+        if format == self.lastFormat && ranking == self.lastRanking && expansion == self.lastSet && lazy {
             return self.currentLeaders
         }
         let url : String = "https://www.17lands.com/data/leaderboard?expansion=\(expansion)&format=\(format)"
@@ -70,7 +70,7 @@ class MagicMetadataModel: NSObject {
             players = leaderBoard.winRate
         case "trophies":
             players = leaderBoard.trophies
-        case "trophy reate":
+        case "trophy rate":
             players = leaderBoard.trophyRate
         default:
             players = []
@@ -103,7 +103,7 @@ class MagicMetadataModel: NSObject {
     // MARK: - Get Cards Methods
     func getCardStatsForSet(expansion: String, format: String, colorsFilter:[String] = [], rarity:String? = nil, name:String? = nil, sortby:String = "name") -> [Card] {
         
-            let url : String = "https://www.17lands.com/card_ratings/data?expansion=\(expansion)&format=\(format)&start_date=2021-04-30&end_date=2021-08-31"
+            let url : String = "https://www.17lands.com/card_ratings/data?expansion=\(expansion)&format=\(format)&start_date=2015-01-10&end_date=2021-08-31"
             var request = URLRequest(url: URL(string: url)!)
             request.httpMethod = "GET"
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")

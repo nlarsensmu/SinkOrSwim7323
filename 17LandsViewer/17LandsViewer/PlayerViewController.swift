@@ -10,6 +10,8 @@ import UIKit
 class PlayerViewController: UIViewController {
     var player:Player?
     var rank:Int = 0
+    var minValue: Int = 0
+    var maxValue: Int = 500
     weak private var metaDataModel:MagicMetadataModel? = MagicMetadataModel.sharedInstance
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,21 +27,17 @@ class PlayerViewController: UIViewController {
             self.winsText.text = "\(wins) wins"
         }
         if let winRate = player?.winRate {
-            self.winRate.text = "\(winRate) %"
+            self.winRate.text = String(format: "%.2lf%%", winRate * 100)
         }
         if let trophies = player?.trophies {
             self.tophiesText.text = "\(trophies) trophies"
         }
         if let trophiesRate = player?.trophyRate {
-            self.trophyRate.text = "\(trophiesRate) %"
+            self.trophyRate.text = String(format: "%.2lf%%", trophiesRate * 100)
         }
         rankLabel.text = String(rank)
         stepper.value = Double(rank)
-        stepper.minimumValue = 1.0
-        stepper.maximumValue = 500
         stepper.stepValue = 1.0
-        rankSlider.maximumValue = 500
-        rankSlider.minimumValue = 1
     }
     @IBAction func stepAction(_ sender: UIStepper) {
         self.rank = Int(sender.value)

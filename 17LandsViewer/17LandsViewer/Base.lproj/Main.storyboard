@@ -399,7 +399,7 @@
         <scene sceneID="cyc-Dw-7dq">
             <objects>
                 <viewController id="7cs-Dh-uuD" customClass="FullCardViewController" customModule="_7LandsViewer" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="Mda-7Z-3RY">
+                    <view key="view" contentMode="scaleToFill" id="Mda-7Z-3RY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -644,6 +644,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vu7-7n-CmP">
+                                <rect key="frame" x="225" y="624" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="z25-fj-lkB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -696,6 +701,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tLi-pI-Uci" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2540.579710144928" y="522.99107142857144"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Mm0-Gc-FNG">
+            <objects>
+                <viewController id="zCK-yl-8z3" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Mr-XK-2oq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="3An-kO-VuY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2gX-Jf-M5O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3347" y="369"/>
         </scene>
     </scenes>
     <resources>
