@@ -9,7 +9,7 @@ import UIKit
 
 class LeaderBoardTableViewController: UITableViewController {
     
-    weak private var metaDataModel:MagicMetadataModel? = MagicMetadataModel.sharedInstance
+    lazy private var metaDataModel:MagicMetadataModel? = MagicMetadataModel.sharedInstance
 
     var set:String?
     var format:String?
@@ -143,7 +143,8 @@ class LeaderBoardTableViewController: UITableViewController {
                let s = self.set,
                let f = self.format,
                let r = self.ranking,
-               let leaderboard = self.metaDataModel?.getLeaderBoards(expansion: s, format: f, ranking: r) {
+               let model = self.metaDataModel,
+               let leaderboard = model.getLeaderBoards(expansion: s, format: f, ranking: r) {
                 playerController.player = leaderboard[index]
                 playerController.rank = index + 1
                 if let model = self.metaDataModel,

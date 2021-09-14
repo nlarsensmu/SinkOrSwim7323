@@ -12,7 +12,9 @@ class PlayerViewController: UIViewController {
     var rank:Int = 0
     var minValue: Int = 0
     var maxValue: Int = 500
-    weak private var metaDataModel:MagicMetadataModel? = MagicMetadataModel.sharedInstance
+    lazy private var metaDataModel:MagicMetadataModel? = {
+        return MagicMetadataModel.sharedInstance
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         DispatchQueue.main.async {
@@ -57,7 +59,6 @@ class PlayerViewController: UIViewController {
             self.resetValues()
         }
     }
-    var i = UIImage()
     @IBOutlet weak var rankSlider: UISlider!
     @IBOutlet weak var stepper: UIStepper!
     @IBOutlet weak var rankLabel: UILabel!

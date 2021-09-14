@@ -19,7 +19,9 @@ class CardResultsTableViewController: UITableViewController {
     var results:[Card] = []
     
     
-    weak private var metaDataModel:MagicMetadataModel? = MagicMetadataModel.sharedInstance
+    lazy private var metaDataModel:MagicMetadataModel? = {
+        return MagicMetadataModel.sharedInstance
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()

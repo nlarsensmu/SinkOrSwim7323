@@ -10,7 +10,9 @@ import UIKit
 class DraftViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     
-    weak private var metaDataModel:MagicMetadataModel? = MagicMetadataModel.sharedInstance
+    lazy private var metaDataModel:MagicMetadataModel? = {
+      return MagicMetadataModel.sharedInstance
+    }()
     
     lazy var cardSearchModel:CardSearchModel = {
         return CardSearchModel.init() // look into whether or not to make this a "shared instance"

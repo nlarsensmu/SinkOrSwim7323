@@ -11,7 +11,9 @@ class LeaderBoardViewContorller: UIViewController, UITextFieldDelegate, UIPicker
 
     
 
-    weak private var metaDataModel:MagicMetadataModel? = MagicMetadataModel.sharedInstance
+    lazy private var metaDataModel:MagicMetadataModel? = {
+        return MagicMetadataModel.sharedInstance
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()

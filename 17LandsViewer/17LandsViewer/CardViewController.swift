@@ -10,7 +10,9 @@ import UIKit
 class CardViewController: UIViewController {
 
     var card:Card?
-    weak private var metaDataModel:MagicMetadataModel? = MagicMetadataModel.sharedInstance
+    lazy private var metaDataModel:MagicMetadataModel? = {
+        return MagicMetadataModel.sharedInstance
+    }()
     
     
     

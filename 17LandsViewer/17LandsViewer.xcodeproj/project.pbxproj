@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B0A3258B26E68F0B00BD49C1 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A3258A26E68F0B00BD49C1 /* NotificationView.swift */; };
 		B0A9399E26E402A70039E1FF /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A9399D26E402A70039E1FF /* PlayerViewController.swift */; };
 		FD60DDE526DEFF9900C5AF2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD60DDE426DEFF9900C5AF2C /* AppDelegate.swift */; };
 		FD60DDE726DEFF9900C5AF2C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD60DDE626DEFF9900C5AF2C /* SceneDelegate.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B0A3258A26E68F0B00BD49C1 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		B0A9399D26E402A70039E1FF /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		FD60DDE126DEFF9900C5AF2C /* 17LandsViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 17LandsViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD60DDE426DEFF9900C5AF2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				B0A9399D26E402A70039E1FF /* PlayerViewController.swift */,
 				FD9C648726E49124002F31DC /* ScryFallModel.swift */,
 				FD9C648926E49785002F31DC /* ScryFallCard.swift */,
+				B0A3258A26E68F0B00BD49C1 /* NotificationView.swift */,
 			);
 			path = 17LandsViewer;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				FD9C648826E49124002F31DC /* ScryFallModel.swift in Sources */,
 				FD60DDE526DEFF9900C5AF2C /* AppDelegate.swift in Sources */,
 				FD9C646726E2969D002F31DC /* FirstScreenTableViewController.swift in Sources */,
+				B0A3258B26E68F0B00BD49C1 /* NotificationView.swift in Sources */,
 				FD9C648A26E49785002F31DC /* ScryFallCard.swift in Sources */,
 				FD9C648226E41D60002F31DC /* CardViewController.swift in Sources */,
 				FD9C647826E2DB8A002F31DC /* LeaderBoardViewContorller.swift in Sources */,
