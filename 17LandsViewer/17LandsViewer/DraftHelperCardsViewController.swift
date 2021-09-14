@@ -53,8 +53,9 @@ class DraftHelperCardsViewController: UIViewController, UITextFieldDelegate, UIP
         let section = indexPath.section
         let item = indexPath.item
         print("\(row) \(section) \(item)")
+        
         if let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "cardCollectionViewCell", for: indexPath) as? CardCollectionViewCell {
-            cell.imageView.downloaded(from: cards[indexPath.item].imgLarge
+            cell.imageView.downloaded(from: cards[indexPath.item].imgSmall
             )
             return cell
         }
