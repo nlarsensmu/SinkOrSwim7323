@@ -55,9 +55,49 @@ class CardResultsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cardResultCell", for: indexPath)
+        
+        var cellID = ""
+        var color:UIColor = UIColor.white
+        var colorText:UIColor = UIColor.white
+        
+        if results[indexPath.row].color == "W" {
+            cellID = "cardResultCellWhite"
+            color = UIColor.white
+            colorText = UIColor.black
+        } else if results[indexPath.row].color == "U" { // U represents shorthand for Blue in MTG
+            cellID = "cardResultCellBlue"
+            color = UIColor.blue
+            colorText = UIColor.white
+        } else if results[indexPath.row].color == "R" {
+            cellID = "cardResultCellRed"
+            color = UIColor.red
+            colorText = UIColor.white
+        } else if results[indexPath.row].color == "G" {
+            cellID = "cardResultCellGreen"
+            color = UIColor.green
+            colorText = UIColor.black
+        } else if results[indexPath.row].color == "B" {
+            cellID = "cardResultCellBlack"
+            color = UIColor.black
+            colorText = UIColor.white
+        } else if results[indexPath.row].color.count > 1 {
+            cellID = "cardResultCellGold"
+            color = UIColor.yellow
+            colorText = UIColor.black
+        } else if results[indexPath.row].color == "" {
+            cellID = "cardResultCellColorless"
+            color = UIColor.gray
+            colorText = UIColor.black
+        }
+        
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
         
         cell.textLabel?.text = self.results[indexPath.row].name
+        cell.backgroundColor = color
+        cell.textLabel?.textColor = colorText
+        cell.detailTextLabel?.text = results[indexPath.row].rarity
+        cell.detailTextLabel?.textColor = colorText
 
         // Configure the cell...
 
