@@ -735,6 +735,7 @@
                             <constraint firstItem="2aw-8T-zBE" firstAttribute="top" secondItem="Kni-Md-KZo" secondAttribute="bottom" constant="51" id="SB4-TV-Ytx"/>
                             <constraint firstItem="L65-Zi-2fd" firstAttribute="centerX" secondItem="taN-cr-jIM" secondAttribute="centerX" id="Vpu-qf-VkE"/>
                             <constraint firstItem="2aw-8T-zBE" firstAttribute="centerX" secondItem="taN-cr-jIM" secondAttribute="centerX" id="rfP-Ab-dEq"/>
+                            <constraint firstItem="2aw-8T-zBE" firstAttribute="width" secondItem="vBG-Wv-XgP" secondAttribute="width" multiplier="0.772947" id="sIv-a6-vWJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ycg-Q1-QFX"/>

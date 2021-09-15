@@ -22,3 +22,6 @@ A best of 3 format where players play a total of 3 games regaurdless of losses. 
 
 ### Sealed (Traditional)
 In sealed ONE player opens 6 packs of 15 cards and constructs a deck 40 card deck (normally 16 or 17 lands that were not from the packs). This is played similar to draft with normal (like priemer) and Traditional that is best of 3	
+
+### 17 Lands Data Shortfalls
+17 Lands is a new application, it has  not been running in some of the older sets. The sets it has good data for include STX, AFR

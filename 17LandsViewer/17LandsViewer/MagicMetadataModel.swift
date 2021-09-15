@@ -19,7 +19,7 @@ class MagicMetadataModel: NSObject {
         return sharedInstance
     }()
     
-    private var sets =  ["STX","AFR","KHM","ZNR","KLR","M21","AKR","IKO","THB","ELD","M20","WAR","RNA","GRN","M19","DOM","RIX","XLN","MH2","MH1","2XM","TSR","Ravnica","CORE","Cube"];
+    private var sets =  ["STX","AFR","KHM","ZNR","KLR","AKR","IKO"];
     private var formats = ["Sealed","PremierDraft","QuickDraft","TradDraft"]
     private var rankings = ["wins","actual rank","win rate","trophies", "trophy rate"]
     private var currentLeaders:[Player] = []
