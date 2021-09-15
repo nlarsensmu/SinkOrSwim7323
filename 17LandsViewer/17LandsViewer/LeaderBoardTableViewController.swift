@@ -78,13 +78,13 @@ class LeaderBoardTableViewController: UITableViewController {
                 case "actual rank":
                     cell.detailTextLabel?.text = topPlayers[indexPath.row].rank
                 case "win rate":
-                    cell.detailTextLabel?.text = String(format: "%.2lf%%", topPlayers[indexPath.row].winRate * 100)
+                    cell.detailTextLabel?.text = String(format: "%.2lf%% Win Rate", topPlayers[indexPath.row].winRate * 100)
                 case "trophies":
-                    cell.detailTextLabel?.text = String(format: "%d", topPlayers[indexPath.row].trophies)
+                    cell.detailTextLabel?.text = String(format: "%d Trophies", topPlayers[indexPath.row].trophies)
                 case "wins":
-                    cell.detailTextLabel?.text = String(format: "%d", topPlayers[indexPath.row].wins)
+                    cell.detailTextLabel?.text = String(format: "%d Wins", topPlayers[indexPath.row].wins)
                 case "trophy rate":
-                    cell.detailTextLabel?.text = String(format: "%.2lf%%", topPlayers[indexPath.row].trophyRate * 100)
+                    cell.detailTextLabel?.text = String(format: "%.2lf%% Trophy Rate", topPlayers[indexPath.row].trophyRate * 100)
                 default:
                     cell.detailTextLabel?.text = "No data"
                 }
