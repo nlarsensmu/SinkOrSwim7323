@@ -4,7 +4,6 @@
 This application will give a Magic The Gathering Player a view into the data that is kept at 17Lands.
 The goal is to provide users the ability to:
 * Search Card Stats based off card attributes
-* See a list of cards performance based off set, rarity, format, and color
 * See leader boards for 17Lands users
 * Allow the user to use the "Draft Helper" to make informed decisions during a draft
 
@@ -24,4 +23,7 @@ A best of 3 format where players play a total of 3 games regaurdless of losses. 
 In sealed ONE player opens 6 packs of 15 cards and constructs a deck 40 card deck (normally 16 or 17 lands that were not from the packs). This is played similar to draft with normal (like priemer) and Traditional that is best of 3	
 
 ### 17 Lands Data Shortfalls
-17 Lands is a new application, it has  not been running in some of the older sets. The sets it has good data for include STX, AFR
+17 Lands is a new application, it has  not been running in some of the older sets. We removed sets that appear on 17lands website but do not have good data. 
+
+### Username disclaimer
+It is not frequent, but everynow and then a inappropriate username can slip though the cracks, we apologize if one shows up on your leaderboard. 
