@@ -18,6 +18,10 @@ class DraftHelperCardsViewController: UIViewController, UITextFieldDelegate, UIP
     var cardToAdd:String = ""
     var cards:[ScryFallCard] = []
     
+    lazy private var metaDataModel:MagicMetadataModel? = {
+        return MagicMetadataModel.sharedInstance
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -62,6 +66,19 @@ class DraftHelperCardsViewController: UIViewController, UITextFieldDelegate, UIP
             cell.imageView.downloaded(from: self.cards[indexPath.row].imgSmall)
             
             cell.improvementLabel.text = cards[indexPath.row].improvement
+            
+            // Find the cards from the metaDataModel and pass it in.
+            var card:Card?
+            if let metaDataCards = metaDataModel?.getCardStatsForSet(expansion: set, format: format) {
+                for c in metaDataCards {
+                    if c.name == self.cards[indexPath.row].cardName {
+                        card = c
+                    }
+                }
+            }
+            if let c = card {
+                cell.card = c
+            }
             returnCell = cell
         }
      
@@ -90,6 +107,10 @@ class DraftHelperCardsViewController: UIViewController, UITextFieldDelegate, UIP
             vc.set = self.set
             vc.delegate = self
             vc.popoverPresentationController?.delegate = self
+        }
+        
+        if let vc = segue.destination as? CardViewController, let s = sender as? CardCollectionViewCell {
+            vc.card = s.card
         }
     }
     

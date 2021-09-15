@@ -10,5 +10,6 @@ import UIKit
 class CardCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: CardImageView!
     @IBOutlet weak var improvementLabel: UILabel!
+    var card:Card?
     
 }
