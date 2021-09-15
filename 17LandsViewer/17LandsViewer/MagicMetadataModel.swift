@@ -151,7 +151,7 @@ class MagicMetadataModel: NSObject {
             return cards
     }
     
-    // MARK: - Fil,ter Functions
+    // MARK: - Filter Functions
     private func filter(cards:[Card], byColors:[String]) -> [Card] {
         var returnedCards: [Card] = []
         
@@ -159,7 +159,7 @@ class MagicMetadataModel: NSObject {
         for card in cards {
             if colorFilters.count != 0 {
                 for c in colorFilters {
-                    if card.color.contains(c) {
+                    if card.color.contains(c) || (card.color == "" && c == "") {
                         returnedCards.append(card)
                     }
                 }
