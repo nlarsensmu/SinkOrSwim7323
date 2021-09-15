@@ -75,7 +75,7 @@ class LeaderBoardTableViewController: UITableViewController {
             
             if let r = self.ranking {
                 switch r {
-                case "rank":
+                case "actual rank":
                     cell.detailTextLabel?.text = topPlayers[indexPath.row].rank
                 case "win rate":
                     cell.detailTextLabel?.text = String(format: "%.2lf%%", topPlayers[indexPath.row].winRate * 100)

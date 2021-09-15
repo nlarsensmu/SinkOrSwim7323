@@ -59,8 +59,9 @@ class DraftHelperCardsViewController: UIViewController, UITextFieldDelegate, UIP
         }
         var returnCell:UICollectionViewCell? = nil
         if let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "cardCollectionViewCell", for: indexPath) as? CardCollectionViewCell {
-            cell.imageView.downloaded(from: self.cards[indexPath.row].imgSmall
-            )
+            cell.imageView.downloaded(from: self.cards[indexPath.row].imgSmall)
+            
+            cell.improvementLabel.text = cards[indexPath.row].improvement
             returnCell = cell
         }
      
@@ -103,9 +104,11 @@ class DraftHelperCardsViewController: UIViewController, UITextFieldDelegate, UIP
 
 extension DraftHelperCardsViewController: PassDataDelegate {
     func passData(_ data: String) {
-        print("cardName \(data)")
+        let datas = data.components(separatedBy: "|")
+        print("cardName \(datas[0]) IP \(datas[1])")
 
-        if var card:ScryFallCard = ScryFallModel.getCardDataFromScryFall(cardName: data) {
+        if let card:ScryFallCard = ScryFallModel.getCardDataFromScryFall(cardName: datas[0]) {
+            card.improvement = datas[1]
             DispatchQueue.main.async {
                 print(card.imgSmall)
                 self.cards.append(card)

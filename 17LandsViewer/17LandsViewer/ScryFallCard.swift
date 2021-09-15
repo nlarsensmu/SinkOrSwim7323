@@ -19,6 +19,7 @@ class ScryFallCard: NSObject {
     var imgSmall:String = ""
     var imgNormal:String = ""
     var imgLarge:String = ""
+    var improvement:String = ""
     
     init(dict:NSDictionary) {
         if let cardName = dict["name"] as? String {

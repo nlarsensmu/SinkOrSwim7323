@@ -150,7 +150,6 @@
         <!--View Controller-->
         <scene sceneID="IUl-Rn-ljh">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YWv-2q-kDg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="zmA-jp-0eW" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fe3-Bs-JBq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -169,6 +168,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="dIj-L5-6jH"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YWv-2q-kDg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="473.91304347826093" y="-132.58928571428572"/>
         </scene>
@@ -599,10 +599,10 @@
                                 <exclude reference="heu-Ps-MSD"/>
                                 <exclude reference="HOj-zf-xHU"/>
                                 <exclude reference="8bs-YI-d0y"/>
+                                <exclude reference="gxy-xh-56s"/>
                                 <exclude reference="AXO-aI-1Mc"/>
                                 <exclude reference="zgA-kd-Jm8"/>
                                 <exclude reference="dhH-xY-9ah"/>
-                                <exclude reference="gxy-xh-56s"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
@@ -625,12 +625,12 @@
                                 <exclude reference="RZE-eR-LWz"/>
                                 <include reference="8bs-YI-d0y"/>
                                 <exclude reference="HFb-iZ-3Vj"/>
+                                <include reference="gxy-xh-56s"/>
                                 <include reference="AXO-aI-1Mc"/>
                                 <exclude reference="KWq-9i-Oay"/>
                                 <exclude reference="UM3-SC-NWu"/>
                                 <exclude reference="MlI-KV-zeO"/>
                                 <include reference="dhH-xY-9ah"/>
-                                <include reference="gxy-xh-56s"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=regular">
@@ -667,7 +667,7 @@
         <scene sceneID="cyc-Dw-7dq">
             <objects>
                 <viewController id="7cs-Dh-uuD" customClass="FullCardViewController" customModule="_7LandsViewer" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Mda-7Z-3RY">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="Mda-7Z-3RY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -794,42 +794,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LtP-42-HTE">
-                                <rect key="frame" x="0.0" y="181" width="414" height="672"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="A4z-VV-juR">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cardCollectionViewCell" id="9Fv-op-yi3" customClass="CardCollectionViewCell" customModule="_7LandsViewer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="x1t-Rd-yV5">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Qb-bz-LD2" customClass="CardImageView" customModule="_7LandsViewer" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                                </imageView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="3Qb-bz-LD2" firstAttribute="width" secondItem="x1t-Rd-yV5" secondAttribute="width" id="3VA-IH-B3K"/>
-                                                <constraint firstItem="3Qb-bz-LD2" firstAttribute="height" secondItem="x1t-Rd-yV5" secondAttribute="height" id="TVc-4q-lCS"/>
-                                                <constraint firstItem="3Qb-bz-LD2" firstAttribute="centerY" secondItem="x1t-Rd-yV5" secondAttribute="centerY" id="WMb-rk-2FI"/>
-                                                <constraint firstItem="3Qb-bz-LD2" firstAttribute="centerX" secondItem="x1t-Rd-yV5" secondAttribute="centerX" id="caL-Mc-Jn7"/>
-                                            </constraints>
-                                        </collectionViewCellContentView>
-                                        <connections>
-                                            <outlet property="imageView" destination="3Qb-bz-LD2" id="lmC-nU-lqt"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Card Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6mh-n7-4gb">
-                                <rect key="frame" x="0.0" y="148" width="414" height="34"/>
+                                <rect key="frame" x="0.0" y="160" width="414" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -839,16 +805,65 @@
                                     </segue>
                                 </connections>
                             </textField>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LtP-42-HTE">
+                                <rect key="frame" x="0.0" y="267" width="414" height="672"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="A4z-VV-juR">
+                                    <size key="itemSize" width="167" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cardCollectionViewCell" id="9Fv-op-yi3" customClass="CardCollectionViewCell" customModule="_7LandsViewer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="167" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="x1t-Rd-yV5">
+                                            <rect key="frame" x="0.0" y="0.0" width="167" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Qb-bz-LD2" customClass="CardImageView" customModule="_7LandsViewer" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="167" height="128"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TaB-Ad-DUT">
+                                                    <rect key="frame" x="62" y="54" width="42" height="21"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3Qb-bz-LD2" firstAttribute="width" secondItem="x1t-Rd-yV5" secondAttribute="width" id="3VA-IH-B3K"/>
+                                                <constraint firstItem="3Qb-bz-LD2" firstAttribute="width" secondItem="x1t-Rd-yV5" secondAttribute="height" multiplier="167:128" id="EdP-ND-jd2"/>
+                                                <constraint firstAttribute="trailing" secondItem="TaB-Ad-DUT" secondAttribute="trailing" constant="63" id="HOL-gd-Yz1"/>
+                                                <constraint firstItem="TaB-Ad-DUT" firstAttribute="centerY" secondItem="x1t-Rd-yV5" secondAttribute="centerY" id="Sie-yX-JQA"/>
+                                                <constraint firstItem="3Qb-bz-LD2" firstAttribute="height" secondItem="x1t-Rd-yV5" secondAttribute="height" id="TVc-4q-lCS"/>
+                                                <constraint firstItem="3Qb-bz-LD2" firstAttribute="centerY" secondItem="x1t-Rd-yV5" secondAttribute="centerY" id="WMb-rk-2FI"/>
+                                                <constraint firstItem="3Qb-bz-LD2" firstAttribute="centerX" secondItem="x1t-Rd-yV5" secondAttribute="centerX" id="caL-Mc-Jn7"/>
+                                                <constraint firstItem="TaB-Ad-DUT" firstAttribute="centerX" secondItem="x1t-Rd-yV5" secondAttribute="centerX" id="d1d-Li-BX9"/>
+                                                <constraint firstItem="TaB-Ad-DUT" firstAttribute="centerY" secondItem="3Qb-bz-LD2" secondAttribute="centerY" id="ynC-Wc-PbD"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="167" height="128"/>
+                                        <connections>
+                                            <outlet property="imageView" destination="3Qb-bz-LD2" id="lmC-nU-lqt"/>
+                                            <outlet property="improvementLabel" destination="TaB-Ad-DUT" id="Sfb-lN-TOq"/>
+                                            <segue destination="fsO-Gi-WbZ" kind="show" id="gEj-fL-ZRn"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="n0I-8c-FLm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="LtP-42-HTE" firstAttribute="height" secondItem="AiR-ay-chI" secondAttribute="height" multiplier="0.75" id="GMw-OO-pUC"/>
-                            <constraint firstItem="n0I-8c-FLm" firstAttribute="bottom" secondItem="LtP-42-HTE" secondAttribute="bottom" constant="9" id="KlB-eJ-hUK"/>
+                            <constraint firstItem="n0I-8c-FLm" firstAttribute="bottom" secondItem="LtP-42-HTE" secondAttribute="bottom" constant="-77" id="KlB-eJ-hUK"/>
                             <constraint firstItem="LtP-42-HTE" firstAttribute="width" secondItem="AiR-ay-chI" secondAttribute="width" id="epj-My-Dvq"/>
                             <constraint firstItem="6mh-n7-4gb" firstAttribute="centerX" secondItem="n0I-8c-FLm" secondAttribute="centerX" id="fq9-hm-6C3"/>
                             <constraint firstItem="6mh-n7-4gb" firstAttribute="width" secondItem="AiR-ay-chI" secondAttribute="width" id="o77-wd-HwM"/>
-                            <constraint firstItem="LtP-42-HTE" firstAttribute="firstBaseline" secondItem="6mh-n7-4gb" secondAttribute="baseline" constant="11" symbolType="layoutAnchor" id="rzs-hL-hC9"/>
+                            <constraint firstItem="LtP-42-HTE" firstAttribute="firstBaseline" secondItem="6mh-n7-4gb" secondAttribute="baseline" constant="85" id="rzs-hL-hC9"/>
                             <constraint firstItem="LtP-42-HTE" firstAttribute="centerX" secondItem="n0I-8c-FLm" secondAttribute="centerX" id="tB0-1G-CPn"/>
                         </constraints>
                     </view>
@@ -1258,11 +1273,11 @@
                         </variation>
                         <variation key="heightClass=compact">
                             <mask key="constraints">
-                                <exclude reference="Xnc-Io-iAF"/>
                                 <exclude reference="60E-vo-TcW"/>
                                 <include reference="ZsP-Ec-ddM"/>
                                 <include reference="gRQ-Sc-aOa"/>
                                 <exclude reference="shD-zb-muS"/>
+                                <exclude reference="Xnc-Io-iAF"/>
                             </mask>
                         </variation>
                     </view>
@@ -1284,7 +1299,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9Lm-1d-SMl"/>
+        <segue reference="gEj-fL-ZRn"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">

@@ -18,7 +18,7 @@ class CardResultsPopUpTableViewController: CardResultsTableViewController, UIPop
         
         var data:String = ""
         if let name = self.tableView.cellForRow(at: indexPath)?.textLabel?.text {
-            data = name
+            data = name + "|" + String(format: "%.2lf%%", self.results[indexPath.row].drawnImprovementWinRate)
         }
         delegate?.passData(data)
         self.dismiss(animated: true, completion: nil)
