@@ -10,7 +10,7 @@ import UIKit
 class PlayerViewController: UIViewController {
     var player:Player?
     var rank:Int = 0
-    var minValue: Int = 0
+    var minValue: Int = 1
     var maxValue: Int = 500
     lazy private var metaDataModel:MagicMetadataModel? = {
         return MagicMetadataModel.sharedInstance
@@ -18,6 +18,10 @@ class PlayerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         DispatchQueue.main.async {
+            self.stepper.minimumValue = Double(self.minValue)
+            self.stepper.maximumValue = Double(self.maxValue)
+            self.rankSlider.minimumValue = Float(self.minValue)
+            self.rankSlider.maximumValue = Float(self.maxValue)
             self.resetValues()
         }
     }
@@ -38,6 +42,7 @@ class PlayerViewController: UIViewController {
             self.trophyRate.text = String(format: "%.2lf%%", trophiesRate * 100)
         }
         rankLabel.text = String(rank)
+        rankSlider.value = Float(rank)
         stepper.value = Double(rank)
         stepper.stepValue = 1.0
     }

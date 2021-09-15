@@ -8,9 +8,9 @@
 import Foundation
 class ScryFallModel {
     static func getCardDataFromScryFall(cardName: String) -> ScryFallCard? {
-        
-        let cardNameUrl = cardName.replacingOccurrences(of: "+", with: "%2B").replacingOccurrences(of: " ", with: "%20")
+        let cardNameUrl = cardName.replacingOccurrences(of: "+", with: "%2B").replacingOccurrences(of: " ", with: "%20").replacingOccurrences(of: "/", with: "%2F")
         let url : String = "https://api.scryfall.com/cards/named?exact=\(cardNameUrl)"
+        print("request \(url)")
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")

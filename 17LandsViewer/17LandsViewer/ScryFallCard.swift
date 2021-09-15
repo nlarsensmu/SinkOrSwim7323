@@ -44,7 +44,18 @@ class ScryFallCard: NSObject {
         if let toughness = dict["toughness"] as? String {
             self.toughness = toughness
         }
-        
+        if let arr = dict["card_faces"] as? NSArray,
+           let obj = arr[0] as? NSDictionary{
+            if let dict2 = obj["image_uris"] as? NSDictionary, let url = dict2["small"] as? String {
+                self.imgSmall = url
+            }
+            if let dict2 = obj["image_uris"] as? NSDictionary, let url = dict2["normal"] as? String {
+                self.imgNormal = url
+            }
+            if let dict2 = obj["image_uris"] as? NSDictionary, let url = dict2["large"] as? String {
+                self.imgLarge = url
+            }
+        }
         if let dict2 = dict["image_uris"] as? NSDictionary, let url = dict2["small"] as? String {
             self.imgSmall = url
         }

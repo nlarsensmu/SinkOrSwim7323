@@ -53,13 +53,23 @@ class DraftHelperCardsViewController: UIViewController, UITextFieldDelegate, UIP
         let section = indexPath.section
         let item = indexPath.item
         print("\(row) \(section) \(item)")
-        
+        print("cards in cards")
+        for card in self.cards{
+            print(card.cardName)
+        }
+        var returnCell:UICollectionViewCell? = nil
         if let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "cardCollectionViewCell", for: indexPath) as? CardCollectionViewCell {
-            cell.imageView.downloaded(from: cards[indexPath.item].imgSmall
+            cell.imageView.downloaded(from: self.cards[indexPath.row].imgSmall
             )
+            returnCell = cell
+        }
+     
+        if let cell = returnCell {
             return cell
         }
-        fatalError("Could not deque cell")
+        else{
+            fatalError("problem getting card cell")
+        }
     }
     
     
@@ -93,12 +103,18 @@ class DraftHelperCardsViewController: UIViewController, UITextFieldDelegate, UIP
 
 extension DraftHelperCardsViewController: PassDataDelegate {
     func passData(_ data: String) {
-        if let card:ScryFallCard = ScryFallModel.getCardDataFromScryFall(cardName: data) {
-            self.cards.append(card)
+        print("cardName \(data)")
+
+        if var card:ScryFallCard = ScryFallModel.getCardDataFromScryFall(cardName: data) {
+            DispatchQueue.main.async {
+                print(card.imgSmall)
+                self.cards.append(card)
+            }
+            
         }
         
         DispatchQueue.main.async {
-            self.collectionView.reloadSections([0])
+            self.collectionView.reloadData()
         }
     }
     
