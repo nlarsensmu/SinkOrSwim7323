@@ -25,14 +25,14 @@ NSArray* screenIdents;
 
 -(NSArray*) screenTypes{
     if(!screenTypes){
-        screenTypes = @[@"Card Search", @"Set Break Down", @"Leader Board", @"Draft Helper"];
+        screenTypes = @[@"Card Search", @"Leader Board", @"Draft Helper"];
     }
     return screenTypes;
 }
 
 -(NSArray*) screenIdents{
     if(!screenIdents){
-        screenIdents = @[@"CardSearch", @"SetBreakDown", @"LeaderBoard", @"DraftHelper"];
+        screenIdents = @[@"CardSearch", @"LeaderBoard", @"DraftHelper"];
     }
     return screenIdents;
 }
